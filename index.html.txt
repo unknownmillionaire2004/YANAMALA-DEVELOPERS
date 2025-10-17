@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanamala Developers | The True Friend for Your Financial Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #0c0a09; /* Stone Black */
+            --accent-color: #d97706; /* Amber/Gold */
+            --text-color: #f5f5f4; /* Off-white */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            /* Motion Background Implementation */
+            background-image: radial-gradient(circle at 15% 50%, rgba(217, 119, 6, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 85% 50%, rgba(217, 119, 6, 0.05) 0%, transparent 40%);
+            background-size: 200% 200%;
+            animation: gradient-move 30s ease infinite alternate;
+        }
+
+        @keyframes gradient-move {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Subtle Floating Animation for the logo/icon */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-element {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Scroll Animation States */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Premium Glow Button */
+        .glow-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transition: all 0.4s ease;
+            box-shadow: 0 0 5px rgba(217, 119, 6, 0.5);
+            font-weight: 700;
+        }
+        .glow-btn:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.8), 0 0 40px rgba(217, 119, 6, 0.4);
+            background-color: #f59e0b; /* A brighter amber */
+        }
+
+        /* Card Glow Effect on Hover */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .premium-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.3);
+        }
+
+        /* Vertical Separator Animation */
+        .separator-line {
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-color), rgba(217, 119, 6, 0.1));
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 1.2s ease, opacity 1.2s ease;
+        }
+        .separator-line.is-visible {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md shadow-2xl">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo/Icon from Brochure -->
+                <img src="https://placehold.co/40x40/0c0a09/d97706?text=YI" alt="Yanamala Logo" class="h-10 w-10 floating-element" onerror="this.src='https://placehold.co/40x40/0c0a09/d97706?text=YI'">
+                <div class="text-xl font-black tracking-wider text-white">
+                    <span class="text-amber-600">YANAMALA</span> DEVELOPERS
+                    <p class="text-xs font-light text-gray-500 hidden sm:block">మీ ఆర్థికాభివృద్ధికి నిజమైన నేస్తం...</p>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-amber-600 transition">Company & Founder</a>
+                <a href="#projects" class="hover:text-amber-600 transition">Our Projects</a>
+                <a href="#knowledge" class="hover:text-amber-600 transition">Knowledge Center</a>
+                <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
+            </div>
+            <a href="tel:+91XXXXXXXXXX" class="hidden md:block px-4 py-2 text-sm rounded-full glow-btn">
+                Call Now <i class="fas fa-phone-alt ml-1"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section (High-Impact with Core Offer) -->
+    <section class="relative h-screen flex items-center justify-center text-center p-8 overflow-hidden">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative max-w-5xl z-10 p-4">
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold leading-tight mb-4 text-white scroll-reveal">
+                Invest in Hyderabad's <span class="text-amber-600">Golden Corridor</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-gray-400 mb-10 font-light scroll-reveal" style="transition-delay: 0.3s;">
+                DTCP/HMDA Approved Plots | The True Friend for Your Financial Growth.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 scroll-reveal" style="transition-delay: 0.6s;">
+                <a href="#projects" class="glow-btn text-lg px-8 py-4 rounded-full shadow-2xl">
+                    Explore Luxury Villa Plots
+                </a>
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="glow-btn text-lg px-8 py-4 rounded-full bg-green-600 hover:bg-green-500 shadow-2xl !text-white">
+                    <i class="fab fa-whatsapp mr-2"></i> Message on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Value Proposition -->
+    <section id="value" class="py-24 max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white scroll-reveal">The Yanamala Advantage</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Card 1: Pricing Challenge -->
+            <div class="premium-card p-8 rounded-xl scroll-reveal">
+                <div class="text-5xl font-black text-amber-600 mb-4">30%</div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Open Challenge Pricing</h3>
+                <p class="text-gray-400">Our plots are priced **30% less than the current market rate** in the booming Shadnagar region. Unbeatable investment opportunity guaranteed.</p>
+            </div>
+
+            <!-- Card 2: Social Commitment -->
+            <div class="premium-card p-8 rounded-xl scroll-reveal" style="transition-delay: 0.2s;">
+                <div class="text-5xl font-black text-amber-600 mb-4">₹6L</div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Plot for a Girl Child</h3>
+                <p class="text-gray-400">Dedicated commitment to social responsibility, offering plots for a girl child starting at just **₹6 Lakhs** in Hyderabad's Shadnagar.</p>
+            </div>
+
+            <!-- Card 3: Trust & Support -->
+            <div class="premium-card p-8 rounded-xl scroll-reveal" style="transition-delay: 0.4s;">
+                <div class="text-5xl font-black text-amber-600 mb-4"><i class="fas fa-handshake"></i></div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Beyond Selling: Our Responsibility</h3>
+                <p class="text-gray-400">"Konipinchedame kadhu, amminchadadam kuda maa badhyathe." We don't just help you buy; **selling and profit realization is also our commitment.**</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT COMPANY & FOUNDER -->
+    <section id="about" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            
+            <div class="lg:sticky lg:top-24 space-y-4 scroll-reveal">
+                <h2 class="text-5xl font-extrabold text-white mb-2">The <span class="text-amber-600">Founding</span> Vision</h2>
+                <div class="w-16 h-1 separator-line"></div> <!-- Animated Separator -->
+            </div>
+            
+            <!-- Founder Profile -->
+            <div class="lg:col-span-2 space-y-12">
+                <div class="premium-card p-8 rounded-2xl scroll-reveal">
+                    <h3 class="text-3xl font-bold text-amber-600 mb-4">About Yanamala Developers Pvt Ltd</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Established with a mission to make prime real estate accessible for genuine financial growth, Yanamala Developers stands as a pillar of trust in the Hyderabad land development sector. With DTCP and HMDA approvals, our focus is on securing clean titles and offering strategic plots that guarantee high returns. We prioritize location, legality, and client satisfaction above all.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check-circle text-amber-600 mr-2"></i> Clear Title & Linked Documents</li>
+                        <li><i class="fas fa-check-circle text-amber-600 mr-2"></i> 100% Vaastu Compliant Layouts</li>
+                        <li><i class="fas fa-check-circle text-amber-600 mr-2"></i> Plot Monitoring Services Included</li>
+                    </ul>
+                </div>
+
+                <div class="premium-card p-8 rounded-2xl flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8 scroll-reveal" style="transition-delay: 0.2s;">
+                    <!-- Placeholder for Founder Image -->
+                    <img src="https://placehold.co/150x180/d97706/0c0a09?text=Yanamala+Raju" alt="Yanamala Raju" class="rounded-lg shadow-xl" onerror="this.src='https://placehold.co/150x180/d97706/0c0a09?text=Yanamala+Raju'">
+                    <div>
+                        <h3 class="text-3xl font-bold text-white mb-2">Yanamala Raju</h3>
+                        <p class="text-xl font-medium text-amber-600 mb-4">Founder & CMD</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            "Real estate is the right place and the right time for investment." Yanamala Raju, the driving force behind the company, ensures that every project, from "Happy Brundavan" to the Shadnagar plots, adheres to the highest standards of quality and transparency. His vision is built on a simple promise: to be the true financial friend to every investor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS & PLOTS SECTION -->
+    <section id="projects" class="py-24 max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white scroll-reveal">Our <span class="text-amber-600">Premium Projects</span></h2>
+
+        <div class="space-y-16">
+            <!-- Project 1: Happy Brundavan (Villa Plots) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center premium-card p-8 rounded-2xl scroll-reveal">
+                <div class="order-2 lg:order-1 space-y-6">
+                    <p class="text-sm font-semibold text-amber-600 uppercase tracking-widest">New Relaunch Offer</p>
+                    <h3 class="text-4xl font-bold text-white">Happy Brundavan - Highway Facing Villa Plots</h3>
+                    <p class="text-gray-300 text-lg">
+                        Located at the strategic Burgula Junction, these plots offer the perfect blend of luxury and investment potential, right next to the highway. Ideal for building your dream villa or securing an asset with explosive appreciation.
+                    </p>
+                    <div class="bg-amber-600/10 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-2xl font-black text-amber-500">₹24,999/- <span class="text-base font-light text-gray-400">Per Sq.Yd.</span></span>
+                        <span class="px-3 py-1 bg-amber-600 text-white font-bold rounded-full text-sm shadow-lg">Relaunch Offer</span>
+                    </div>
+                    <p class="text-sm text-amber-400 font-semibold flex items-center"><i class="fas fa-gift mr-2"></i> Spot Payment Bonus: 3 Grams Gold (for 'A' Option)</p>
+                    <a href="#contact" class="glow-btn px-6 py-3 rounded-full inline-block mt-4">
+                        Request Site Visit <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <img src="https://placehold.co/600x400/3f3f46/d97706?text=Happy+Brundavan+Layout" alt="Happy Brundavan" class="rounded-xl shadow-2xl w-full transition duration-500 hover:scale-[1.01] hover:shadow-amber-500/30" onerror="this.src='https://placehold.co/600x400/3f3f46/d97706?text=Happy+Brundavan+Layout'">
+                </div>
+            </div>
+
+            <!-- Project 2: Shadnagar Approved Open Plots -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
+                <div>
+                    <img src="https://placehold.co/600x400/3f3f46/d97706?text=Shadnagar+Plots+Aerial" alt="Shadnagar Plots" class="rounded-xl shadow-2xl w-full transition duration-500 hover:scale-[1.01] hover:shadow-amber-500/30" onerror="this.src='https://placehold.co/600x400/3f3f46/d97706?text=Shadnagar+Plots+Aerial'">
+                </div>
+                <div class="space-y-6">
+                    <p class="text-sm font-semibold text-amber-600 uppercase tracking-widest">High-Growth Investment</p>
+                    <h3 class="text-4xl font-bold text-white">Shadnagar Open Plots (DTCP/HMDA)</h3>
+                    <p class="text-gray-300 text-lg">
+                        Secure your future in Hyderabad's fastest-developing zone. Proximity to Regional Ring Road (RRR), Pharma SEZs, and major industrial hubs ensures guaranteed appreciation.
+                    </p>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <p class="font-semibold text-white mb-2">Prime Location Highlights:</p>
+                        <ul class="grid grid-cols-2 text-sm text-gray-400">
+                            <li><i class="fas fa-map-marker-alt text-amber-600 mr-2"></i> 5 Mins to RRR</li>
+                            <li><i class="fas fa-map-marker-alt text-amber-600 mr-2"></i> Near DLF & Microsoft</li>
+                            <li><i class="fas fa-map-marker-alt text-amber-600 mr-2"></i> Shadnagar Town proximity</li>
+                            <li><i class="fas fa-map-marker-alt text-amber-600 mr-2"></i> 30 Mins to Airport</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="glow-btn px-6 py-3 rounded-full inline-block mt-4">
+                        View Investment Options <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL ESTATE KNOWLEDGE & SOCIAL MEDIA -->
+    <section id="knowledge" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white scroll-reveal">Real Estate <span class="text-amber-600">Knowledge Hub</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Column 1: Knowledge/Blog -->
+                <div class="premium-card p-8 rounded-2xl scroll-reveal">
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fas fa-chart-line text-amber-600 mr-2"></i> Investment Insights</h3>
+                    <p class="text-gray-400 mb-4">Understanding the importance of location and approval in real estate. We break down why DTCP/HMDA approval is non-negotiable for future value.</p>
+                    <a href="#" class="text-amber-600 hover:text-amber-400 font-semibold transition">Read Latest Article <i class="fas fa-long-arrow-alt-right ml-1"></i></a>
+                </div>
+
+                <!-- Column 2: YouTube Link -->
+                <div class="premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fab fa-youtube text-red-600 mr-2"></i> Project Videos</h3>
+                    <p class="text-gray-400 mb-4">Watch aerial footage, site tours, and testimonials on our official YouTube channel. See the potential of Happy Brundavan come to life.</p>
+                    <a href="#" target="_blank" class="glow-btn px-4 py-2 rounded-full bg-red-600 hover:bg-red-500 !text-white text-sm inline-block">
+                        <i class="fab fa-youtube mr-2"></i> Go to YouTube
+                    </a>
+                </div>
+
+                <!-- Column 3: Social/Connect -->
+                <div class="premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fas fa-users text-amber-600 mr-2"></i> Connect & Share</h3>
+                    <p class="text-gray-400 mb-4">Follow us for real-time updates, construction progress, and special festive offers for Dussehra and Diwali.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" target="_blank" class="text-3xl text-blue-600 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="text-3xl text-green-500 hover:text-green-400 transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" class="text-3xl text-amber-600 hover:text-amber-400 transition"><i class="fas fa-paper-plane"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact CTA -->
+    <footer id="contact" class="py-16 md:py-20 bg-black border-t border-amber-600/30">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Make the <span class="text-amber-600">Right Investment</span>, Right Now.</h2>
+            <p class="text-xl text-gray-400 mb-8">
+                The right place and the right time for investment is now. Contact us today.
+            </p>
+            <a href="tel:+91XXXXXXXXXX" class="glow-btn text-lg px-8 py-4 rounded-full shadow-2xl">
+                Call: +91 XXXXXXXXXX
+            </a>
+            <div class="mt-10 text-gray-600 text-sm space-y-2">
+                <p>Head Office: 1st Floor, Aab Building, Pillar No. 171, Near By Pista House, Attapur, Hyderabad - 500 048.</p>
+                <p class="text-xs">&copy; 2025 Yanamala Developers Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations and Dynamic Effects -->
+    <script>
+        // Get the root element for CSS variables
+        const rootStyles = getComputedStyle(document.documentElement);
+        const accentColor = rootStyles.getPropertyValue('--accent-color').trim();
+        const primaryColor = rootStyles.getPropertyValue('--primary-color').trim();
+        
+        // --- SCROLL ANIMATION LOGIC (For .scroll-reveal and .separator-line) ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stop observing once visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 }); // Trigger when 15% of element is visible
+
+        document.querySelectorAll('.scroll-reveal, .separator-line').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Simple Parallax Effect on Hero Background (Kept for premium feel)
+        function handleParallax() {
+            const heroSection = document.querySelector('.hero-bg');
+            if (heroSection) {
+                const scrolled = window.scrollY;
+                // Applying the parallax effect directly to the background position for a clean look
+                heroSection.style.backgroundPositionY = -(scrolled * 0.2) + 'px';
+            }
+        }
+
+        window.onload = function() {
+            window.addEventListener('scroll', handleParallax);
+            // Since the original AI simulation is replaced with real content, we remove the simulation logic.
+        };
+    </script>
+
+</body>
+</html>
