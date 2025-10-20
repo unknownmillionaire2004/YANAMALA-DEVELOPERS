@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Brundavan | Yanamala Developers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0c0a09;
+            --accent-color: #22c55e;
+            --text-color: #f5f5f4;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        .glow-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transition: all 0.4s ease;
+            box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+            font-weight: 700;
+        }
+        .glow-btn:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.8), 0 0 40px rgba(34, 197, 94, 0.4);
+            background-color: #4ade80;
+        }
+        .premium-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-stone-900">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="assets/WhatsApp Image 2025-10-18 at 10.37.55_3d53e0ac.jpg" alt="Yanamala Developers Logo" class="h-10 w-auto border border-green-600/50 rounded-lg">
+                <div>
+                    <span class="text-xl font-black tracking-wider text-white"><span class="text-green-500">YANAMALA</span> DEVELOPERS</span>
+                    <p class="text-xs font-light text-gray-500">Happy Brundavan Project</p>
+                </div>
+            </div>
+            <a href="index.html" class="glow-btn px-5 py-2 text-sm rounded-full">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Main Site
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Project Hero Section -->
+        <section class="py-20 md:py-32 text-center bg-gray-900/50">
+            <div class="max-w-4xl mx-auto px-6">
+                <p class="text-lg font-semibold text-green-500 uppercase tracking-widest scroll-reveal">Highway Facing Luxury Villa Plots</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mt-4 mb-6 scroll-reveal" style="transition-delay: 0.2s;">Happy Brundavan</h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto scroll-reveal" style="transition-delay: 0.4s;">
+                    Discover an exclusive opportunity to own a piece of Hyderabad's future at Burgula Junction, Shadnagar. A premium DTCP-approved layout designed for luxurious living and unmatched investment growth.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Image Gallery -->
+        <section id="gallery" class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Project Gallery</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Site+Entrance" alt="Project Entrance" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl md:col-span-2 scroll-reveal" style="transition-delay: 0.2s;">
+                         <img src="https://placehold.co/1200x400/3f3f46/22c55e?text=Aerial+View+of+Plots" alt="Project Layout" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl md:col-span-2 scroll-reveal">
+                        <img src="https://placehold.co/1200x400/3f3f46/22c55e?text=Lush+Greenery+and+Parks" alt="Project Amenities" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Roads+and+Infrastructure" alt="Project Infrastructure" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Details & Features -->
+        <section id="features" class="py-24 bg-black/60">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="text-4xl font-extrabold text-white mb-6">A Landmark Project for a Golden Future</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Happy Brundavan is not just a real estate project; it's a vision for a prosperous future. Every square yard is meticulously planned to offer the best in terms of location, amenities, and appreciation potential.
+                    </p>
+                     <p class="text-gray-300 leading-relaxed">
+                       With clear titles, 100% Vaastu compliance, and an unbeatable relaunch offer, this is the perfect time to secure your family's future and build your dream home.
+                    </p>
+                </div>
+                <div class="premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold text-green-500 mb-6">Project Highlights & Amenities</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span><strong>DTCP Approved Layout</strong> with clear titles and linked documents.</span></li>
+                        <li class="flex items-start"><i class="fas fa-road text-green-500 mt-1 mr-3"></i><span><strong>100 & 40 Feet Black Top Roads</strong> for smooth connectivity.</span></li>
+                        <li class="flex items-start"><i class="fas fa-bolt text-green-500 mt-1 mr-3"></i><span>Underground electricity and modern street lighting.</span></li>
+                        <li class="flex items-start"><i class="fas fa-tree text-green-500 mt-1 mr-3"></i><span>Avenue plantation, lush parks, and dedicated children's play area.</span></li>
+                        <li class="flex items-start"><i class="fas fa-shield-alt text-green-500 mt-1 mr-3"></i><span>Secure entrance arch and 24/7 security for peace of mind.</span></li>
+                        <li class="flex items-start"><i class="fas fa-compass text-green-500 mt-1 mr-3"></i><span>100% Vaastu compliant design for positive energy.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout Plan -->
+        <section id="layout" class="py-24">
+             <div class="max-w-5xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-8 scroll-reveal">Official Site Layout Plan</h2>
+                <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                    <img src="https://placehold.co/1200x800/f5f5f4/0c0a09?text=Happy+Brundavan+Layout+Map" alt="Layout Plan" class="rounded-lg w-full">
+                </div>
+             </div>
+        </section>
+
+        <!-- Location Advantages & Map -->
+        <section id="location" class="py-24 bg-gray-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Unbeatable Location & Connectivity</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="scroll-reveal">
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-center"><i class="fas fa-map-marker-alt text-green-500 mr-4"></i>Just 5 minutes from the proposed Regional Ring Road (RRR).</li>
+                            <li class="flex items-center"><i class="fas fa-industry text-green-500 mr-4"></i>Close proximity to major IT hubs like DLF & Microsoft.</li>
+                            <li class="flex items-center"><i class="fas fa-pills text-green-500 mr-4"></i>Near the massive Pharma SEZ and industrial corridor.</li>
+                            <li class="flex items-center"><i class="fas fa-shopping-cart text-green-500 mr-4"></i>Minutes away from Shadnagar town and marketplace.</li>
+                            <li class="flex items-center"><i class="fas fa-plane-departure text-green-500 mr-4"></i>A smooth 30-minute drive to the International Airport.</li>
+                        </ul>
+                    </div>
+                    <div class="h-96 rounded-xl overflow-hidden shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3813.111863205778!2d78.18805557590829!3d17.11197771216503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba951afb44011%3A0x93fcd326848418ab!2sBurgula%2C%20Telangana%20509202!5e0!3m2!1sen!2sin!4v1729431835773!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer & Contact CTA -->
+    <footer id="contact" class="py-16 md:py-20 bg-black border-t border-green-600/30">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Interested in Happy Brundavan?</h2>
+            <p class="text-xl text-gray-400 mb-8">
+                Contact us today for a site visit and to avail the exclusive relaunch offer.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="tel:+919000100280" class="glow-btn text-lg px-8 py-4 rounded-full shadow-2xl">
+                    Call: +91 90001 00280
+                </a>
+                <a href="https://wa.me/919000100280?text=Hello%20Yanamala%20Developers,%20I'm%20interested%20in%20the%20Happy%20Brundavan%20project.%20Please%20share%20more%20details." target="_blank" class="glow-btn text-lg px-8 py-4 rounded-full bg-green-600 hover:bg-green-500 shadow-2xl !text-white">
+                    <i class="fab fa-whatsapp mr-2"></i> Message on WhatsApp
+                </a>
+            </div>
+
+            <div class="mt-12 text-gray-600 text-sm">
+                 <p class="text-xs">&copy; 2025 Yanamala Developers Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
