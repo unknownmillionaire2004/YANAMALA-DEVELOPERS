@@ -46,6 +46,34 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* NEW: Added floating animation from main page */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-element {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Styling for the pricing table */
+        .pricing-table th, .pricing-table td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        .pricing-table th {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        .pricing-table td {
+            color: var(--text-color);
+        }
+        .pricing-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
     </style>
 </head>
 <body class="bg-stone-900">
@@ -54,7 +82,8 @@
     <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="assets/logo.png" alt="Yanamala Developers Logo" class="h-10 w-auto floating-element border border-green-600/50 rounded-lg" onerror="this.src='https://placehold.co/40x40/0c0a09/22c55e?text=YI'">
+                <!-- UPDATED: Added floating class and correct image path -->
+                <img src="WhatsApp Image 2025-10-18 at 10.37.55_3d53e0ac.jpg" alt="Yanamala Developers Logo" class="h-10 w-auto border border-green-600/50 rounded-lg floating-element">
                 <div>
                     <span class="text-xl font-black tracking-wider text-white"><span class="text-green-500">YANAMALA</span> DEVELOPERS</span>
                     <p class="text-xs font-light text-gray-500">Happy Brundavan Project</p>
@@ -79,75 +108,218 @@
             </div>
         </section>
         
-        <!-- Image Gallery -->
+        <!-- UPDATED: Image Gallery (Expanded to 12 photos) -->
         <section id="gallery" class="py-24">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Project Gallery</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Project Live Photos & Gallery</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Row 1 -->
                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Site+Entrance" alt="Project Entrance" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+1" alt="Project Live Photo 1" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
                     </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl md:col-span-2 scroll-reveal" style="transition-delay: 0.2s;">
-                         <img src="https://placehold.co/1200x400/3f3f46/22c55e?text=Aerial+View+of+Plots" alt="Project Layout" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+2" alt="Project Live Photo 2" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
                     </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl md:col-span-2 scroll-reveal">
-                        <img src="https://placehold.co/1200x400/3f3f46/22c55e?text=Lush+Greenery+and+Parks" alt="Project Amenities" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+3" alt="Project Live Photo 3" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
                     </div>
-                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Roads+and+Infrastructure" alt="Project Infrastructure" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+4" alt="Project Live Photo 4" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+5" alt="Project Live Photo 5" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+6" alt="Project Live Photo 6" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+7" alt="Project Live Photo 7" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+8" alt="Project Live Photo 8" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+9" alt="Project Live Photo 9" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+10" alt="Project Live Photo 10" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+11" alt="Project Live Photo 11" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+12" alt="Project Live Photo 12" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Project Details & Features -->
-        <section id="features" class="py-24 bg-black/60">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- NEW: Investment Quote Section -->
+        <section class="py-20 bg-black/60">
+            <div class="max-w-7xl mx-auto px-6 text-center">
                 <div class="scroll-reveal">
-                    <h2 class="text-4xl font-extrabold text-white mb-6">A Landmark Project for a Golden Future</h2>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        Happy Brundavan is not just a real estate project; it's a vision for a prosperous future. Every square yard is meticulously planned to offer the best in terms of location, amenities, and appreciation potential.
-                    </p>
-                     <p class="text-gray-300 leading-relaxed">
-                       With clear titles, 100% Vaastu compliance, and an unbeatable relaunch offer, this is the perfect time to secure your family's future and build your dream home.
-                    </p>
-                </div>
-                <div class="premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                    <h3 class="text-2xl font-bold text-green-500 mb-6">Project Highlights & Amenities</h3>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span><strong>DTCP Approved Layout</strong> with clear titles and linked documents.</span></li>
-                        <li class="flex items-start"><i class="fas fa-road text-green-500 mt-1 mr-3"></i><span><strong>100 & 40 Feet Black Top Roads</strong> for smooth connectivity.</span></li>
-                        <li class="flex items-start"><i class="fas fa-bolt text-green-500 mt-1 mr-3"></i><span>Underground electricity and modern street lighting.</span></li>
-                        <li class="flex items-start"><i class="fas fa-tree text-green-500 mt-1 mr-3"></i><span>Avenue plantation, lush parks, and dedicated children's play area.</span></li>
-                        <li class="flex items-start"><i class="fas fa-shield-alt text-green-500 mt-1 mr-3"></i><span>Secure entrance arch and 24/7 security for peace of mind.</span></li>
-                        <li class="flex items-start"><i class="fas fa-compass text-green-500 mt-1 mr-3"></i><span>100% Vaastu compliant design for positive energy.</span></li>
-                    </ul>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-green-500 mb-4" style="line-height: 1.4;">"పెట్టుబడికి ఇదే... సరైన సమయం ప్రదేశం"</h2>
+                    <p class="text-3xl md:text-4xl font-bold text-white mb-8">"Right Place & Right Time for INVESTMENT"</p>
+                    <p class="text-xl text-gray-400 italic">"Don't wait to buy land, buy land and wait." - Will Rogers</p>
                 </div>
             </div>
         </section>
 
-        <!-- Layout Plan -->
+        <!-- UPDATED: Project Highlights & Amenities (from Brochure) -->
+        <section id="features" class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-16 text-white scroll-reveal">Venture Highlights & Amenities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- Column 1: Venture Highlights -->
+                    <div class="premium-card p-8 rounded-2xl scroll-reveal">
+                        <h3 class="text-2xl font-bold text-green-500 mb-6">Venture Highlights</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Udipi Hotel</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Chicken Center</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Medical Shop</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Govt School</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Munna Pharmacy(Burgula)</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Rameswaram Temple</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Balanagar SEZ</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Shadnagar Bastation</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Industries</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Hospital & Medical</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Hair Saloon</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Railway Station(Burgula)</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Govt Degree College</span></li>
+                            <li class="flex"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Patrol Bunk (Very Near)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Amenities -->
+                    <div class="premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <h3 class="text-2xl font-bold text-green-500 mb-6">Project Amenities</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex"><i class="fas fa-road text-green-500 mt-1 mr-3"></i><span>All Blacktop Roads</span></li>
+                            <li class="flex"><i class="fas fa-water text-green-500 mt-1 mr-3"></i><span>Underground Drainage</span></li>
+                            <li class="flex"><i class="fas fa-wine-glass text-green-500 mt-1 mr-3"></i><span>Drinking Water</span></li>
+                            <li class="flex"><i class="fas fa-child text-green-500 mt-1 mr-3"></i><span>Children's Play Area</span></li>
+                            <li class="flex"><i class="fas fa-tree text-green-500 mt-1 mr-3"></i><span>Avenue Plantation</span></li>
+                            <li class="flex"><i class="fas fa-eye text-green-500 mt-1 mr-3"></i><span>Hot Monitoring</span></li>
+                            <li class="flex"><i class="fas fa-hard-hat text-green-500 mt-1 mr-3"></i><span>Building Pillar Assistance</span></li>
+                            <li class="flex"><i class="fas fa-shield-alt text-green-500 mt-1 mr-3"></i><span>24x7 Security</span></li>
+                            <li class="flex"><i class="fas fa-compass text-green-500 mt-1 mr-3"></i><span>100% Vaastu Compliant</span></li>
+                            <li class="flex"><i class="fas fa-bolt text-green-500 mt-1 mr-3"></i><span>Underground Electricity</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- NEW: Pricing & Offers Section -->
+        <section id="pricing" class="py-24 bg-black/60">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Investment & Special Offers</h2>
+                
+                <!-- Main Offer Card -->
+                <div class="premium-card bg-green-900/30 border-green-500 p-8 md:p-12 rounded-2xl text-center shadow-2xl shadow-green-500/20 mb-12 scroll-reveal">
+                    <span class="inline-block bg-green-500 text-black text-sm font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-4">Re Launch Opening Offer</span>
+                    <h3 class="text-5xl md:text-6xl font-extrabold text-white mb-3">₹24,999/- <span class="text-3xl font-medium text-gray-300">Per Sq.Yd.</span></h3>
+                    <p class="text-2xl font-bold text-yellow-400"><i class="fas fa-gem mr-2"></i> 3 GRM GOLD <span class="text-white font-normal">Only for A - Option Spot Payment</span></p>
+                    <p class="text-lg text-gray-400 mt-2">Offer Effect from Next Month</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Payment Options -->
+                    <div class="premium-card p-6 rounded-2xl scroll-reveal">
+                        <h3 class="text-2xl font-bold text-white mb-4">Payment Option</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full pricing-table rounded-lg overflow-hidden">
+                                <thead>
+                                    <tr>
+                                        <th>Option</th>
+                                        <th>Down Payment</th>
+                                        <th>Rate Per Sq.Yd.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Option A</td>
+                                        <td>Full Payment (Spot)</td>
+                                        <td>₹24999/-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Option B</td>
+                                        <td>50% Down Payment</td>
+                                        <td>₹25799/-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Option C</td>
+                                        <td>₹2 Lakhs Down Payment</td>
+                                        <td>₹25999/-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Facing Charges & Gifts -->
+                    <div class="space-y-8">
+                        <div class="premium-card p-6 rounded-2xl scroll-reveal">
+                            <h3 class="text-2xl font-bold text-white mb-4">Extra Facing Charges</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>East Facing Extra Charges: <span class="font-bold text-white">₹ 99/-</span> Per Sq.Yd.</li>
+                                <li>Any Corner Facing Extra Charges: <span class="font-bold text-white">₹ 199/-</span> Per Sq.Yd.</li>
+                                <li>North East Facing Extra Charges: <span class="font-bold text-white">₹ 299/-</span> Per Sq.Yd.</li>
+                            </ul>
+                        </div>
+                        <div class="premium-card p-6 rounded-2xl scroll-reveal">
+                            <h3 class="text-2xl font-bold text-white mb-4">Assured Gifts & Benefit</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li><i class="fas fa-gift text-green-500 mr-2"></i> Happy Sweet Box <span class="text-gray-400">(Only for C-Option Payment)</span></li>
+                                <li><i class="fas fa-tv text-green-500 mr-2"></i> Plot Monitoring Service</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPDATED: Layout Plan & Brochure Section -->
         <section id="layout" class="py-24">
-             <div class="max-w-5xl mx-auto px-6 text-center">
-                <h2 class="text-4xl font-extrabold text-white mb-8 scroll-reveal">Official Site Layout Plan</h2>
+             <div class="max-w-6xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-12 scroll-reveal">Official Brochure & Site Layout</h2>
+                
+                <!-- Brochure Image -->
+                <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal mb-12">
+                    <h3 class="text-2xl font-bold text-white my-4">Project Brochure</h3>
+                    <img src="BROUCHER_page-0001.jpg" alt="Happy Brundavan Brochure" class="rounded-lg w-full" onerror="this.src='https://placehold.co/1200x1700/f5f5f4/0c0a09?text=Upload+BROUCHER_page-0001.jpg+Here'">
+                </div>
+
+                <!-- Layout Plan Image -->
                 <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                    <img src="images/my-layout-plan.jpg" alt="Layout Plan" class="rounded-lg w-full">
+                    <h3 class="text-2xl font-bold text-white my-4">Site Layout Plan</h3>
+                    <img src="BROUCHER_page-0002.jpg" alt="Layout Plan" class="rounded-lg w-full" onerror="this.src='https://placehold.co/1200x800/f5f5f4/0c0a09?text=Upload+BROUCHER_page-0002.jpg+Here'">
                 </div>
              </div>
         </section>
 
-        <!-- Location Advantages & Map -->
+        <!-- UPDATED: Location Advantages & Map -->
         <section id="location" class="py-24 bg-gray-900/50">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Unbeatable Location & Connectivity</h2>
+                <h2 class="text-4xl font-extrabold text-center mb-16 text-white scroll-reveal">Unbeatable Location & Connectivity</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="scroll-reveal">
-                        <ul class="space-y-4 text-lg">
-                            <li class="flex items-center"><i class="fas fa-map-marker-alt text-green-500 mr-4"></i>Just 5 minutes from the proposed Regional Ring Road (RRR).</li>
-                            <li class="flex items-center"><i class="fas fa-industry text-green-500 mr-4"></i>Close proximity to major IT hubs like DLF & Microsoft.</li>
-                            <li class="flex items-center"><i class="fas fa-pills text-green-500 mr-4"></i>Near the massive Pharma SEZ and industrial corridor.</li>
-                            <li class="flex items-center"><i class="fas fa-shopping-cart text-green-500 mr-4"></i>Minutes away from Shadnagar town and marketplace.</li>
-                            <li class="flex items-center"><i class="fas fa-plane-departure text-green-500 mr-4"></i>A smooth 30-minute drive to the International Airport.</li>
+                        <!-- Updated list from brochure -->
+                        <ul class="space-y-3 text-lg">
+                            <li class="flex items-center"><i class="fas fa-map-marker-alt text-green-500 mr-4"></i>Shadnagar Railway Station</li>
+                            <li class="flex items-center"><i class="fas fa-bus text-green-500 mr-4"></i>Shadnagar Bus Stand</li>
+                            <li class="flex items-center"><i class="fas fa-industry text-green-500 mr-4"></i>Shadnagar Industrial Estate</li>
+                            <li class="flex items-center"><i class="fab fa-amazon text-green-500 mr-4"></i>Amazon Data Center</li>
+                            <li class="flex items-center"><i class="fas fa-building text-green-500 mr-4"></i>P&G and Johnson & Johnson</li>
+                            <li class="flex items-center"><i class="fas fa-school text-green-500 mr-4"></i>Reputed Schools & Colleges</li>
+                            <li class="flex items-center"><i class="fas fa-landmark text-green-500 mr-4"></i>Outer Ring Road (ORR)</li>
+                            <li class="flex items-center"><i class="fas fa-map-signs text-green-500 mr-4"></i>Regional Ring Road (RRR)</li>
+                            <li class="flex items-center"><i class="fas fa-building text-green-500 mr-4"></i>Microsoft & DLF</li>
+                            <li class="flex items-center"><i class="fas fa-plane-departure text-green-500 mr-4"></i>International Airport (30 Mins)</li>
                         </ul>
                     </div>
                     <div class="h-96 rounded-xl overflow-hidden shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
@@ -176,8 +348,11 @@
                 </a>
             </div>
 
-            <div class="mt-12 text-gray-600 text-sm">
-                 <p class="text-xs">&copy; 2025 Yanamala Developers Pvt Ltd. All Rights Reserved.</p>
+            <!-- Contact Info from Brochure -->
+            <div class="mt-12 text-gray-500 text-sm space-y-2">
+                <p><strong>Head Office:</strong> 1st Floor, Aab Building, Pillar No. 171, Near By Pista House, Attapur.</p>
+                <p><strong>Branch Office:</strong> Bahadurpura-Zoo Park, Hyd. & Shadnagar-Nandigadda.</p>
+                <p class="text-xs mt-4">&copy; 2025 Yanamala Developers Pvt Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -200,7 +375,4 @@
 
 </body>
 </html>
-
-
-
 
