@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Brundavan | Yanamala Developers</title>
+    <title>Happy Brundavan | Highway Facing Villa Plots, Shadnagar | Yanamala Developers</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore Happy Brundavan, premium DTCP approved highway facing villa plots at Burgula Junction, Shadnagar by Yanamala Developers. Unbeatable investment opportunity in Hyderabad's growth corridor.">
+    <meta name="keywords" content="Happy Brundavan, Yanamala Developers, villa plots Hyderabad, plots Shadnagar, DTCP approved plots, HMDA plots, real estate investment Hyderabad, land investment Shadnagar, Burgula Junction plots, highway facing plots">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -47,7 +51,7 @@
             transform: translateY(0);
         }
         
-        /* NEW: Added floating animation from main page */
+        /* Added floating animation from main page */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-8px); }
@@ -74,6 +78,23 @@
         .pricing-table tr:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.02);
         }
+        /* Style for video embeds */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 0.75rem; /* Match card rounding */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="bg-stone-900">
@@ -83,7 +104,7 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <!-- UPDATED: Added floating class and correct image path -->
-                <img src="assets/logo.png" alt="Yanamala Developers Logo" class="h-10 w-auto floating-element border border-green-600/50 rounded-lg" onerror="this.src='https://placehold.co/40x40/0c0a09/22c55e?text=YI'">
+                <img src="WhatsApp Image 2025-10-18 at 10.37.55_3d53e0ac.jpg" alt="Yanamala Developers Logo" class="h-10 w-auto border border-green-600/50 rounded-lg floating-element" onerror="this.src='https://placehold.co/40x40/0c0a09/22c55e?text=YI'">
                 <div>
                     <span class="text-xl font-black tracking-wider text-white"><span class="text-green-500">YANAMALA</span> DEVELOPERS</span>
                     <p class="text-xs font-light text-gray-500">Happy Brundavan Project</p>
@@ -97,7 +118,7 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Project Hero Section -->
+        <!-- 1. Project Hero Section -->
         <section class="py-20 md:py-32 text-center bg-gray-900/50">
             <div class="max-w-4xl mx-auto px-6">
                 <p class="text-lg font-semibold text-green-500 uppercase tracking-widest scroll-reveal">Highway Facing Luxury Villa Plots</p>
@@ -108,66 +129,19 @@
             </div>
         </section>
         
-        <!-- UPDATED: Image Gallery (Expanded to 12 photos) -->
-        <section id="gallery" class="py-24">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Project Live Photos & Gallery</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <!-- Row 1 -->
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+1" alt="Project Live Photo 1" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
-                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+2" alt="Project Live Photo 2" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+3" alt="Project Live Photo 3" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+4" alt="Project Live Photo 4" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+5" alt="Project Live Photo 5" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
-                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+6" alt="Project Live Photo 6" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+7" alt="Project Live Photo 7" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+8" alt="Project Live Photo 8" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <!-- Row 3 -->
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+9" alt="Project Live Photo 9" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
-                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+10" alt="Project Live Photo 10" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+11" alt="Project Live Photo 11" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
-                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+12" alt="Project Live Photo 12" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- NEW: Investment Quote Section -->
+        <!-- 2. Investment Quote Section -->
         <section class="py-20 bg-black/60">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <div class="scroll-reveal">
                     <h2 class="text-4xl md:text-5xl font-extrabold text-green-500 mb-4" style="line-height: 1.4;">"పెట్టుబడికి ఇదే... సరైన సమయం ప్రదేశం"</h2>
                     <p class="text-3xl md:text-4xl font-bold text-white mb-8">"Right Place & Right Time for INVESTMENT"</p>
                     <p class="text-xl text-gray-400 italic">"Don't wait to buy land, buy land and wait." - Will Rogers</p>
+                     <p class="text-xl text-gray-400 italic mt-4">"Landlords grow rich in their sleep without working, risking or economizing." - John Stuart Mill</p>
                 </div>
             </div>
         </section>
 
-        <!-- UPDATED: Project Highlights & Amenities (from Brochure) -->
+        <!-- 3. Project Highlights & Amenities (from Brochure) -->
         <section id="features" class="py-24">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-extrabold text-center mb-16 text-white scroll-reveal">Venture Highlights & Amenities</h2>
@@ -213,8 +187,145 @@
                 </div>
             </div>
         </section>
+
+        <!-- 4. Location Advantages & Map -->
+        <section id="location" class="py-24 bg-gray-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-16 text-white scroll-reveal">Unbeatable Location & Connectivity</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="scroll-reveal">
+                        <!-- Updated list from brochure -->
+                        <ul class="space-y-3 text-lg">
+                            <li class="flex items-center"><i class="fas fa-map-marker-alt text-green-500 mr-4"></i>Shadnagar Railway Station</li>
+                            <li class="flex items-center"><i class="fas fa-bus text-green-500 mr-4"></i>Shadnagar Bus Stand</li>
+                            <li class="flex items-center"><i class="fas fa-industry text-green-500 mr-4"></i>Shadnagar Industrial Estate</li>
+                            <li class="flex items-center"><i class="fab fa-amazon text-green-500 mr-4"></i>Amazon Data Center</li>
+                            <li class="flex items-center"><i class="fas fa-building text-green-500 mr-4"></i>P&G and Johnson & Johnson</li>
+                            <li class="flex items-center"><i class="fas fa-school text-green-500 mr-4"></i>Reputed Schools & Colleges</li>
+                            <li class="flex items-center"><i class="fas fa-landmark text-green-500 mr-4"></i>Outer Ring Road (ORR)</li>
+                            <li class="flex items-center"><i class="fas fa-map-signs text-green-500 mr-4"></i>Regional Ring Road (RRR)</li>
+                            <li class="flex items-center"><i class="fas fa-building text-green-500 mr-4"></i>Microsoft & DLF</li>
+                            <li class="flex items-center"><i class="fas fa-plane-departure text-green-500 mr-4"></i>International Airport (30 Mins)</li>
+                        </ul>
+                    </div>
+                    <!-- Map Iframe with Correct Embed Link -->
+                    <div class="h-96 rounded-xl overflow-hidden shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3813.111863205778!2d78.18805557590829!3d17.11197771216503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba951afb44011%3A0x93fcd326848418ab!2sYANAMALA%20DEVELOPERS%20HAPPY%20BRUNDAVAN!5e0!3m2!1sen!2sin!4v1729621743588!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <!-- NEW: Pricing & Offers Section -->
+        <!-- 5. Image Gallery (Photos) -->
+        <section id="gallery" class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Project Live Photos</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Row 1 -->
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+1" alt="Project Live Photo 1" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+2" alt="Project Live Photo 2" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+3" alt="Project Live Photo 3" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+4" alt="Project Live Photo 4" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+5" alt="Project Live Photo 5" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+6" alt="Project Live Photo 6" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+7" alt="Project Live Photo 7" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+8" alt="Project Live Photo 8" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+9" alt="Project Live Photo 9" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                         <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+10" alt="Project Live Photo 10" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+11" alt="Project Live Photo 11" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                     <div class="overflow-hidden rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/3f3f46/22c55e?text=Live+Photo+12" alt="Project Live Photo 12" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. NEW: Project Videos Section -->
+        <section id="videos" class="py-24 bg-black/60">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Experience Happy Brundavan: Site Videos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Video 1 -->
+                    <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal">
+                         <div class="video-container">
+                            <!-- Replace with your YouTube embed code -->
+                            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center text-gray-400 mt-4 text-sm">Video Title 1: Site Overview</p>
+                    </div>
+                    <!-- Video 2 -->
+                     <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                         <div class="video-container">
+                             <!-- Replace with your YouTube embed code -->
+                            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                         <p class="text-center text-gray-400 mt-4 text-sm">Video Title 2: Amenities Showcase</p>
+                    </div>
+                    <!-- Video 3 -->
+                     <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal">
+                         <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center text-gray-400 mt-4 text-sm">Video Title 3: Location Advantages</p>
+                    </div>
+                    <!-- Video 4 -->
+                     <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                         <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center text-gray-400 mt-4 text-sm">Video Title 4: Testimonial</p>
+                    </div>
+                    <!-- Add more video blocks here if needed, just copy/paste one of the blocks above -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Layout Plan & Brochure Section -->
+        <section id="layout" class="py-24">
+             <div class="max-w-6xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-12 scroll-reveal">Official Brochure & Site Layout</h2>
+                
+                <!-- Brochure Image -->
+                <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal mb-12">
+                    <h3 class="text-2xl font-bold text-white my-4">Project Brochure</h3>
+                    <!-- Ensure you upload BROUCHER_page-0001.jpg to your repository -->
+                    <img src="BROUCHER_page-0001.jpg" alt="Happy Brundavan Brochure" class="rounded-lg w-full" onerror="this.src='https://placehold.co/1200x1700/f5f5f4/0c0a09?text=Upload+BROUCHER_page-0001.jpg+Here'">
+                </div>
+
+                <!-- Layout Plan Image -->
+                <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold text-white my-4">Site Layout Plan</h3>
+                     <!-- Ensure you upload BROUCHER_page-0002.jpg to your repository -->
+                    <img src="BROUCHER_page-0002.jpg" alt="Layout Plan" class="rounded-lg w-full" onerror="this.src='https://placehold.co/1200x800/f5f5f4/0c0a09?text=Upload+BROUCHER_page-0002.jpg+Here'">
+                </div>
+             </div>
+        </section>
+
+        <!-- 8. Pricing & Offers Section -->
         <section id="pricing" class="py-24 bg-black/60">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Investment & Special Offers</h2>
@@ -283,52 +394,6 @@
             </div>
         </section>
 
-        <!-- UPDATED: Layout Plan & Brochure Section -->
-        <section id="layout" class="py-24">
-             <div class="max-w-6xl mx-auto px-6 text-center">
-                <h2 class="text-4xl font-extrabold text-white mb-12 scroll-reveal">Official Brochure & Site Layout</h2>
-                
-                <!-- Brochure Image -->
-                <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal mb-12">
-                    <h3 class="text-2xl font-bold text-white my-4">Project Brochure</h3>
-                    <img src="assets/BROUCHER_page-0001.jpg" alt="Happy Brundavan Brochure" class="rounded-lg w-full" onerror="this.src='https://placehold.co/1200x1700/f5f5f4/0c0a09?text=Upload+BROUCHER_page-0001.jpg+Here'">
-                </div>
-
-                <!-- Layout Plan Image -->
-                <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                    <h3 class="text-2xl font-bold text-white my-4">Site Layout Plan</h3>
-                    <img src="assets/layout-plan.jpg" alt="Layout Plan" class="rounded-lg w-full" onerror="this.src='https://placehold.co/1200x800/f5f5f4/0c0a09?text=Upload+BROUCHER_page-0002.jpg+Here'">
-                </div>
-             </div>
-        </section>
-
-        <!-- UPDATED: Location Advantages & Map -->
-        <section id="location" class="py-24 bg-gray-900/50">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-extrabold text-center mb-16 text-white scroll-reveal">Unbeatable Location & Connectivity</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="scroll-reveal">
-                        <!-- Updated list from brochure -->
-                        <ul class="space-y-3 text-lg">
-                            <li class="flex items-center"><i class="fas fa-map-marker-alt text-green-500 mr-4"></i>Shadnagar Railway Station</li>
-                            <li class="flex items-center"><i class="fas fa-bus text-green-500 mr-4"></i>Shadnagar Bus Stand</li>
-                            <li class="flex items-center"><i class="fas fa-industry text-green-500 mr-4"></i>Shadnagar Industrial Estate</li>
-                            <li class="flex items-center"><i class="fab fa-amazon text-green-500 mr-4"></i>Amazon Data Center</li>
-                            <li class="flex items-center"><i class="fas fa-building text-green-500 mr-4"></i>P&G and Johnson & Johnson</li>
-                            <li class="flex items-center"><i class="fas fa-school text-green-500 mr-4"></i>Reputed Schools & Colleges</li>
-                            <li class="flex items-center"><i class="fas fa-landmark text-green-500 mr-4"></i>Outer Ring Road (ORR)</li>
-                            <li class="flex items-center"><i class="fas fa-map-signs text-green-500 mr-4"></i>Regional Ring Road (RRR)</li>
-                            <li class="flex items-center"><i class="fas fa-building text-green-500 mr-4"></i>Microsoft & DLF</li>
-                            <li class="flex items-center"><i class="fas fa-plane-departure text-green-500 mr-4"></i>International Airport (30 Mins)</li>
-                        </ul>
-                    </div>
-                    <div class="h-96 rounded-xl overflow-hidden shadow-2xl scroll-reveal" style="transition-delay: 0.2s;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3813.111863205778!2d78.18805557590829!3d17.11197771216503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba951afb44011%3A0x93fcd326848418ab!2sYANAMALA%20DEVELOPERS%20HAPPY%20BRUNDAVAN!5e0!3m2!1sen!2sin!4v1729621743588!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- Footer & Contact CTA -->
@@ -375,7 +440,4 @@
 
 </body>
 </html>
-
-
-
 
