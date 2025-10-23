@@ -88,19 +88,18 @@
             padding: 3rem; /* Increased padding for more space */
         }
 
-        /* Vertical Separator Animation - Now Green */
+        /* UPDATED: Changed to a HORIZONTAL Separator Animation */
         .separator-line {
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--accent-color), rgba(34, 197, 94, 0.1));
+            /* Width and height are controlled by Tailwind (e.g., w-16 h-1) */
+            background-color: var(--accent-color); /* Solid color for the line */
             opacity: 0;
-            transform: scaleY(0);
-            transform-origin: top;
+            transform: scaleX(0); /* Animate horizontally */
+            transform-origin: left; /* Start animation from the left */
             transition: transform 1.2s ease, opacity 1.2s ease;
         }
         .separator-line.is-visible {
             opacity: 1;
-            transform: scaleY(1);
+            transform: scaleX(1); /* Animate to full width */
         }
         /* Style for counter numbers - Now Green */
         .counter-number {
@@ -169,12 +168,20 @@
         
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative max-w-5xl z-10 p-4">
-            <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold leading-tight mb-4 text-white scroll-reveal">
-                Invest in Hyderabad's <span class="text-green-500">Golden Corridor</span>
-            </h1>
-            <p class="text-xl md:text-3xl text-gray-400 mb-10 font-light scroll-reveal" style="transition-delay: 0.3s;">
-                The True Friend for Your Financial Growth.
+            <!-- UPDATED: Replaced H1 with Logo and Company Name for brand focus -->
+            <img src="assets/logo.png" alt="Yanamala Developers Logo" 
+                 class="h-32 w-32 md:h-40 md:w-40 mx-auto mb-6 floating-element border-2 border-green-600/50 rounded-2xl shadow-2xl scroll-reveal" 
+                 onerror="this.src='https://placehold.co/160x160/0c0a09/22c55e?text=YI'">
+            
+            <div class="text-5xl md:text-7xl font-black tracking-wider text-white mb-4 scroll-reveal" style="transition-delay: 0.2s;">
+                <span class="text-green-500">YANAMALA</span> DEVELOPERS
+            </div>
+
+            <!-- UPDATED: Swapped English tagline for the Telugu one from the header -->
+            <p class="text-2xl md:text-4xl text-gray-300 mb-10 font-medium scroll-reveal" style="transition-delay: 0.4s;">
+                మీ ఆర్థికాభివృద్ధికి నిజమైన నేస్తం
             </p>
+
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 scroll-reveal" style="transition-delay: 0.6s;">
                 <a href="#projects" class="glow-btn text-lg px-8 py-4 rounded-full shadow-2xl">
                     Explore Luxury Villa Plots
@@ -187,25 +194,34 @@
     </section>
 
     <section id="value" class="py-24 max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white scroll-reveal">The Yanamala Advantage</h2>
+        <!-- UPDATED: Moved "Golden Corridor" headline here, and made "Yanamala Advantage" the subtitle -->
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white scroll-reveal">
+            Invest in Hyderabad's <span class="text-green-500">Golden Corridor</span>
+        </h2>
+        <p class="text-xl md:text-2xl text-gray-400 text-center mb-16 scroll-reveal" style="transition-delay: 0.2s;">
+            The Yanamala Advantage
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <div class="premium-card p-8 rounded-xl scroll-reveal">
                 <div class="text-5xl font-black text-green-500 mb-4">30%</div>
                 <h3 class="text-2xl font-bold mb-3 text-white">Open Challenge Pricing</h3>
-                <p class="text-gray-400">Our plots are priced **30% less than the current market rate** in the booming Shadnagar region. Unbeatable investment opportunity guaranteed.</p>
+                <!-- FIX: Replaced ** with <strong> -->
+                <p class="text-gray-400">Our plots are priced <strong>30% less than the current market rate</strong> in the booming Shadnagar region. Unbeatable investment opportunity guaranteed.</p>
             </div>
 
             <div class="premium-card p-8 rounded-xl scroll-reveal" style="transition-delay: 0.2s;">
                 <div class="text-5xl font-black text-green-500 mb-4">₹6L</div>
                 <h3 class="text-2xl font-bold mb-3 text-white">Plot for a Girl Child</h3>
-                <p class="text-gray-400">Dedicated commitment to social responsibility, offering plots for a girl child starting at just **₹6 Lakhs** in Hyderabad's Shadnagar.</p>
+                <!-- FIX: Replaced ** with <strong> -->
+                <p class="text-gray-400">Dedicated commitment to social responsibility, offering plots for a girl child starting at just <strong>₹6 Lakhs</strong> in Hyderabad's Shadnagar.</p>
             </div>
 
             <div class="premium-card p-8 rounded-xl scroll-reveal" style="transition-delay: 0.4s;">
                 <div class="text-5xl font-black text-green-500 mb-4"><i class="fas fa-handshake"></i></div>
                 <h3 class="text-2xl font-bold mb-3 text-white">Beyond Selling: Our Responsibility</h3>
-                <p class="text-gray-400">"Konipinchedame kadhu, amminchadadam kuda maa badhyathe." We don't just help you buy; **selling and profit realization is also our commitment.**</p>
+                <!-- FIX: Replaced ** with <strong> -->
+                <p class="text-gray-400">"Konipinchedame kadhu, amminchadadam kuda maa badhyathe." We don't just help you buy; <strong>selling and profit realization is also our commitment.</strong></p>
             </div>
         </div>
     </section>
@@ -243,17 +259,20 @@
             
             <div class="lg:sticky lg:top-24 space-y-4 scroll-reveal">
                 <h2 class="text-5xl font-extrabold text-white mb-2">The <span class="text-green-500">Founding</span> Vision</h2>
-                <div class="w-16 h-1 separator-line"></div> </div>
+                <!-- UPDATED: Reverted to horizontal line classes to match new CSS */ -->
+                <div class="w-16 h-1 separator-line"></div>
+            </div>
             
             <div class="lg:col-span-2 space-y-12">
                 
                 <div class="premium-card p-8 rounded-2xl scroll-reveal">
                     <div class="flex items-center space-x-4 mb-4">
-                         <img src="assets/logo.png" alt="Yanamala Developers Logo" class="h-12 w-auto border border-green-600/50 rounded-lg">
+                         <img src="assets/logo.png" alt="Yanamala Developers Logo" class="h-12 w-auto border border-green-600/50 rounded-lg" onerror="this.src='https://placehold.co/48x48/0c0a09/22c55e?text=YI'">
                         <h3 class="text-3xl font-bold text-green-500">About Yanamala Developers Pvt Ltd</h3>
                     </div>
                     <p class="text-gray-300 leading-relaxed mb-6">
-                        Established on **March 2nd, 2024**, Yanamala Developers is a dynamic startup focused on providing prime, highly profitable real estate investment opportunities, particularly in the Hyderabad growth corridor. Our business model is unique: we specialize in **resale properties** that are guaranteed to be 30% less than the market price, and we are committed to helping you sell when you need to realize your profit.
+                        <!-- FIX: Replaced ** with <strong> -->
+                        Established on <strong>March 2nd, 2024</strong>, Yanamala Developers is a dynamic startup focused on providing prime, highly profitable real estate investment opportunities, particularly in the Hyderabad growth corridor. Our business model is unique: we specialize in <strong>resale properties</strong> that are guaranteed to be 30% less than the market price, and we are committed to helping you sell when you need to realize your profit.
                     </p>
                     <ul class="space-y-2 text-gray-400">
                         <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Clear Title & Linked Documents</li>
@@ -262,42 +281,22 @@
                     </ul>
                 </div>
 
-                <div class="space-y-6">
-                    <h3 class="text-3xl font-bold text-white mb-6 border-b border-gray-700 pb-2 scroll-reveal">Meet the Leadership</h3>
-
-                    <div class="premium-card founder-card rounded-2xl flex flex-col sm:flex-row items-center sm:space-x-12 scroll-reveal">
-                        <img src="assets/founder_raju.jpg" alt="Yanamala Raju - Founder & CMD" class="rounded-full shadow-2xl w-40 h-40 object-cover mb-6 sm:mb-0 border-4 border-green-600" onerror="this.src='https://placehold.co/160x160/22c55e/0c0a09?text=Raju'">
-                        <div>
-                            <h4 class="text-3xl font-black text-white mb-1">Yanamala Raju</h4>
-                            <p class="text-xl font-bold text-green-500 mb-2">Founder & CMD</p>
-                            <p class="text-gray-300 text-sm italic">
-                                **The Visionary:** "Real estate is the right place and the right time for investment." Mr. Raju ensures every project adheres to the highest standards of quality and transparency, built on the promise to be the true financial friend to every investor.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="premium-card p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:space-x-8 scroll-reveal" style="transition-delay: 0.2s;">
-                        <img src="assets/manager_placeholder.jpg" alt="Yanamala Siri - Managing Director" class="rounded-full shadow-lg w-32 h-32 object-cover mb-4 sm:mb-0 border-2 border-gray-600" onerror="this.src='https://placehold.co/128x128/3f3f46/22c55e?text=Manager+Photo'">
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-1">Mrs. Seeri Yanamala</h4>
-                            <p class="text-lg font-medium text-green-500 mb-2">Manager</p>
-                            <p class="text-gray-400 text-sm italic">
-                                **Operational Integrity:** Mrs. Yanamala manages the operational integrity and customer experience. Her focus is on streamlining the entire process, from initial inquiry to final registration, ensuring every client transaction is seamless, transparent, and completely worry-free.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="premium-card p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:space-x-8 scroll-reveal" style="transition-delay: 0.4s;">
-                        <img src="assets/director_placeholder.jpg" alt="Mr. Sunil - Director" class="rounded-full shadow-lg w-32 h-32 object-cover mb-4 sm:mb-0 border-2 border-gray-600" onerror="this.src='https://placehold.co/128x128/3f3f46/22c55e?text=Director+Photo'">
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-1">Sunil Aarya</h4>
-                            <p class="text-lg font-medium text-green-500 mb-2">Director</p>
-                            <p class="text-gray-400 text-sm italic">
-                                **Compliance & Execution:** As the Director, Mr. Sunil oversees project execution and compliance. He guarantees that every plot holds clear titles and all legal documentation is flawlessly handled, solidifying the company's commitment to secure and risk-free investments.
-                            </p>
-                        </div>
+                <!-- UPDATED: Removed "Meet the Leadership" h3 and the other two employee cards -->
+                <!-- This is the new, "royal" founder card -->
+                <div class="premium-card founder-card rounded-2xl flex flex-col items-center text-center p-12 scroll-reveal">
+                    <img src="assets/founder_raju.jpg" alt="Yanamala Raju - Founder & CMD" class="rounded-full shadow-2xl w-48 h-48 object-cover mb-6 border-4 border-green-600" onerror="this.src='https://placehold.co/192x192/22c55e/0c0a09?text=Raju'">
+                    <div>
+                        <!-- UPDATED: Re-ordered and re-styled titles for a more classic feel -->
+                        <p class="text-2xl font-bold text-green-500 mb-2">The Founder & CMD</p>
+                        <h4 class="text-4xl font-black text-white mb-4">Yanamala Raju</h4>
+                        <p class="text-gray-300 text-base italic max-w-lg">
+                            <!-- FIX: Replaced ** with <strong> -->
+                            <strong>The Visionary:</strong> "Real estate is the right place and the right time for investment." Mr. Raju ensures every project adheres to the highest standards of quality and transparency, built on the promise to be the true financial friend to every investor.
+                        </p>
                     </div>
                 </div>
+                <!-- DELETED: The other two employee cards -->
+
             </div>
         </div>
     </section>
@@ -307,7 +306,7 @@
 
         <div class="space-y-16">
             <a href="happy_brundavan.html" class="block">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center premium-card p-8 rounded-2xl scroll-reveal hover:cursor-pointer hover:shadow-2xl hover:shadow-green-500/50 transition duration-300">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center premium-card p-8 rounded-2xl scroll-reveal hover:shadow-2xl hover:shadow-green-500/50 transition duration-300">
                     <div class="order-2 lg:order-1 space-y-6">
                         <p class="text-sm font-semibold text-green-500 uppercase tracking-widest">New Relaunch Offer</p>
                         <h3 class="text-4xl font-bold text-white">Happy Brundavan - Highway Facing Villa Plots</h3>
@@ -537,7 +536,7 @@
                         const t = parseInt(el.getAttribute('data-target'));
                         const s = el.getAttribute('data-suffix');
                         if (countEl && t) {
-                           animateCount(countEl, t, 1500, s);
+                            animateCount(countEl, t, 1500, s);
                         }
                     });
                     metricsAnimated = true;
@@ -657,7 +656,6 @@
 
 </body>
 </html>
-
 
 
 
