@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Invest in premium plots in Hyderabad's Golden Corridor with Yanamala Developers. We offer unbeatable prices, guaranteed resale expertise, and are your true friend for financial growth.">
     
-    <title>Yanamala Developers | The True Friend for Your Financial Growth (Green Theme)</title>
+    <title>Yanamala Developers | మీ ఆర్థికాభివృద్ధికి నిజమైన నేస్తం</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -121,6 +121,14 @@
             max-height: 500px; /* Large enough value to show all content */
         }
 
+        /* NEW: Style for the Founder's Quote box in the Hero section */
+        .founder-quote-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+        }
+
     </style>
 </head>
 <body>
@@ -136,11 +144,11 @@
             </div>
 
             <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#about" class="hover:text-green-500 transition">Company & Founder</a>
+                <a href="#about" class="hover:text-green-500 transition">Founder & Vision</a>
+                <a href="#recognition" class="hover:text-green-500 transition">Awards</a>
                 <a href="#projects" class="hover:text-green-500 transition">Our Projects</a>
                 <a href="#happy-customers" class="hover:text-green-500 transition">Happy Customers</a>
                 <a href="events.html" class="hover:text-green-500 transition">Events</a>
-                <a href="#knowledge" class="hover:text-green-500 transition">Knowledge Center</a>
                 <a href="#contact" class="hover:text-green-500 transition">Contact</a>
             </div>
             <a href="tel:+919000100280" class="hidden md:block px-4 py-2 text-sm rounded-full glow-btn">
@@ -154,10 +162,10 @@
 
         <div id="mobile-menu" class="mobile-menu md:hidden">
             <div class="flex flex-col space-y-3 p-4">
-                <a href="#about" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Company & Founder</a>
+                <a href="#about" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Founder & Vision</a>
+                <a href="#recognition" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Awards</a>
                 <a href="#projects" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Our Projects</a>
                 <a href="#happy-customers" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Happy Customers</a>
-                <a href="#knowledge" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Knowledge Center</a>
                 <a href="#contact" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Contact</a>
                 <a href="tel:+919000100280" class="px-4 py-2 text-center rounded-full glow-btn mt-4 text-sm" onclick="closeMobileMenu()">
                     Call Now <i class="fas fa-phone-alt ml-1"></i>
@@ -169,23 +177,35 @@
     <section class="relative h-screen flex items-center justify-center text-center p-8 overflow-hidden">
         <canvas id="motion-background" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
         
-        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute inset-0 bg-black/70"></div>
         <div class="relative max-w-5xl z-10 p-4">
-            <!-- UPDATED: Increased logo size for mobile (h-48) and fixed desktop size (md:h-64) -->
+            
+            <!-- RESTORED: Central logo with floating animation, matching the original design -->
             <img src="assets/logo.png" alt="Yanamala Developers Logo" 
                  class="h-48 w-48 md:h-64 md:w-64 mx-auto mb-6 floating-element border-2 border-green-600/50 rounded-2xl shadow-2xl scroll-reveal" 
                  onerror="this.src='https://placehold.co/160x160/0c0a09/22c55e?text=YI'">
             
-            <div class="text-5xl md:text-7xl font-black tracking-wider text-white mb-4 scroll-reveal" style="transition-delay: 0.2s;">
+            <div class="text-5xl md:text-7xl font-black tracking-wider text-white mb-2 scroll-reveal" style="transition-delay: 0.2s;">
                 <span class="text-green-500">YANAMALA</span> DEVELOPERS
             </div>
 
-            <!-- UPDATED: Swapped English tagline for the Telugu one from the header -->
-            <p class="text-2xl md:text-4xl text-gray-300 mb-10 font-medium scroll-reveal" style="transition-delay: 0.4s;">
+            <!-- PRIMARY TELUGU TAGLINE -->
+            <p class="text-3xl md:text-5xl text-green-400 mb-6 font-bold scroll-reveal" style="transition-delay: 0.4s;">
                 మీ ఆర్థికాభివృద్ధికి నిజమైన నేస్తం
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 scroll-reveal" style="transition-delay: 0.6s;">
+            <!-- NEW: Creative Founder's Quote/Philosophy -->
+            <div class="founder-quote-box max-w-xl mx-auto rounded-lg shadow-xl mb-12 scroll-reveal" style="transition-delay: 0.6s;">
+                <p class="text-xl md:text-2xl text-white font-medium italic">
+                    <i class="fas fa-quote-left text-green-500 mr-2"></i>
+                    ఇప్పుడే మీ నిర్ణయం, రేపటి మీ పిల్లల భవిష్యత్తు!
+                </p>
+                <p class="text-base text-green-500 mt-2 font-semibold">— Yanamala Raju, Founder & CMD</p>
+            </div>
+            <!-- END NEW QUOTE -->
+
+
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 scroll-reveal" style="transition-delay: 0.8s;">
                 <a href="#projects" class="glow-btn text-lg px-8 py-4 rounded-full shadow-2xl">
                     Explore Luxury Villa Plots
                 </a>
@@ -199,28 +219,29 @@
     <section id="value" class="py-24 max-w-7xl mx-auto px-6">
         <!-- UPDATED: Moved "Golden Corridor" headline here, and made "Yanamala Advantage" the subtitle -->
         <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white scroll-reveal">
-            Invest in Hyderabad's <span class="text-green-500">Golden Corridor</span>
+            మీ భవిష్యత్తు కోసం <span class="text-green-500">స్వర్ణ కారిడార్</span> లో పెట్టుబడి పెట్టండి
         </h2>
         <p class="text-xl md:text-2xl text-gray-400 text-center mb-16 scroll-reveal" style="transition-delay: 0.2s;">
-            The Yanamala Advantage
+            The Yanamala Advantage (యానమల ప్రయోజనం)
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <div class="premium-card p-8 rounded-xl scroll-reveal">
                 <div class="text-5xl font-black text-green-500 mb-4">30%</div>
-                <h3 class="text-2xl font-bold mb-3 text-white">Open Challenge Pricing</h3>
+                <h3 class="text-2xl font-bold mb-3 text-white">ఓపెన్ ఛాలెంజ్ ధర (Open Challenge Pricing)</h3>
                 <p class="text-gray-400">Our plots are priced <strong>30% less than the current market rate</strong> in the booming Shadnagar region. Unbeatable investment opportunity guaranteed.</p>
             </div>
 
             <div class="premium-card p-8 rounded-xl scroll-reveal" style="transition-delay: 0.2s;">
                 <div class="text-5xl font-black text-green-500 mb-4">₹6L</div>
-                <h3 class="text-2xl font-bold mb-3 text-white">Plot for a Girl Child</h3>
-                <p class="text-gray-400">Dedicated commitment to social responsibility, offering plots for a girl child starting at just <strong>₹6 Lakhs</strong> in Hyderabad's Shadnagar.</p>
+                <h3 class="text-2xl font-bold mb-3 text-white">పిల్లల భవిష్యత్తు కోసం (For Children's Future)</h3>
+                <!-- UPDATED: Added new Telugu quote focus -->
+                <p class="text-gray-400">Dedicated commitment to social responsibility, offering plots starting at just <strong>₹6 Lakhs</strong>—invest today for your **పిల్లల ఉన్నత చదువుల కోసం** (children's higher education).</p>
             </div>
 
             <div class="premium-card p-8 rounded-xl scroll-reveal" style="transition-delay: 0.4s;">
                 <div class="text-5xl font-black text-green-500 mb-4"><i class="fas fa-handshake"></i></div>
-                <h3 class="text-2xl font-bold mb-3 text-white">Beyond Selling: Our Responsibility</h3>
+                <h3 class="text-2xl font-bold mb-3 text-white">అమ్మించే బాధ్యత (Resale Responsibility)</h3>
                 <p class="text-gray-400">"Konipinchedame kadhu, amminchadadam kuda maa badhyathe." We don't just help you buy; <strong>selling and profit realization is also our commitment.</strong></p>
             </div>
         </div>
@@ -228,7 +249,7 @@
 
     <section id="metrics" class="py-16 bg-black/60">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-white scroll-reveal">Backed by Trust and Transparency</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-white scroll-reveal">Backed by Trust and Transparency (విశ్వాసం, పారదర్శకత)</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 
                 <div class="scroll-reveal metric-box" data-target="5000" id="metric-investors">
@@ -254,12 +275,41 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: AWARDS AND RECOGNITION (Founder Highlight) -->
+    <section id="recognition" class="py-24 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 scroll-reveal">
+                CMD <span class="text-green-500">Raju's Recognition</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto scroll-reveal" style="transition-delay: 0.2s;">
+                Man of Integrity and Vision: Celebrating the **Best Re-Sale Real Estate** award received at the Real Estate 2025 Business Awards.
+            </p>
+            <div class="premium-card p-8 md:p-12 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-8 md:space-y-0 md:space-x-12">
+                    <!-- Placeholder for CMD Receiving Award Image -->
+                    <img src="assets/CMD_Raju_Award.jpg" alt="Yanamala Raju receiving Real Estate 2025 Business Award" 
+                         class="w-full max-w-sm md:max-w-xs object-cover rounded-xl shadow-2xl border-4 border-green-500/50" 
+                         onerror="this.src='https://placehold.co/300x400/22c55e/0c0a09?text=AWARD+WINNER'">
+                    
+                    <div class="text-left space-y-4">
+                        <span class="text-sm font-bold text-red-500 uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Awarded 2025</span>
+                        <h3 class="text-4xl font-black text-white">Biz-Network's Real Estate Syndicate Award</h3>
+                        <p class="text-2xl font-semibold text-green-500">Best Re-Sale Real Estate Firm</p>
+                        <p class="text-gray-300 leading-relaxed max-w-lg">
+                            This prestigious award recognizes Yanamala Developers' unique commitment to **transparency** and its model of guaranteeing not just the purchase of plots, but also the **selling and profit realization** for investors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END NEW SECTION -->
+
     <section id="about" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
             <div class="lg:sticky lg:top-24 space-y-4 scroll-reveal">
-                <h2 class="text-5xl font-extrabold text-white mb-2">The <span class="text-green-500">Founding</span> Vision</h2>
-                <!-- UPDATED: Reverted to horizontal line classes to match new CSS */ -->
+                <h2 class="text-5xl font-extrabold text-white mb-2">The <span class="text-green-500">Founder</span> & Vision</h2>
                 <div class="w-16 h-1 separator-line"></div>
             </div>
             
@@ -271,7 +321,7 @@
                         <h3 class="text-3xl font-bold text-green-500">About Yanamala Developers Pvt Ltd</h3>
                     </div>
                     <p class="text-gray-300 leading-relaxed mb-6">
-                        Established on <strong>March 2nd, 2024</strong>, Yanamala Developers is a dynamic startup focused on providing prime, highly profitable real estate investment opportunities, particularly in the Hyderabad growth corridor. Our business model is unique: we specialize in <strong>resale properties</strong> that are guaranteed to be 30% less than the market price, and we are committed to helping you sell when you need to realize your profit.
+                        Established on **March 2nd, 2024**, Yanamala Developers is a dynamic startup focused on providing prime, highly profitable real estate investment opportunities, particularly in the Hyderabad growth corridor. Our business model is unique: we specialize in **resale properties** that are guaranteed to be 30% less than the market price, and we are committed to helping you sell when you need to realize your profit.
                     </p>
                     <ul class="space-y-2 text-gray-400">
                         <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Clear Title & Linked Documents</li>
@@ -282,28 +332,25 @@
 
                 <!-- This is the founder card (moved up) -->
                 <div class="premium-card founder-card rounded-2xl flex flex-col items-center text-center p-12 scroll-reveal">
-                    <img src="assets/founder_raju.jpg" alt="Yanamala Raju - Founder & CMD" class="rounded-full shadow-2xl w-48 h-48 object-cover mb-6 border-4 border-green-600" onerror="this.src='https://placehold.co/192x192/22c55e/0c0a09?text=Raju'">
+                    <!-- Updated Image Path and Fallback for Professional Portrait -->
+                    <img src="assets/CMD_Raju_Portrait.jpg" alt="Yanamala Raju - Founder & CMD" class="rounded-full shadow-2xl w-48 h-48 object-cover mb-6 border-4 border-green-600" onerror="this.src='https://placehold.co/192x192/22c55e/0c0a09?text=Raju+CMD'">
                     <div>
-                        <!-- UPDATED: Re-ordered and re-styled titles for a more classic feel -->
-                        <p class="text-2xl font-bold text-green-500 mb-2">The Founder & CMD</p>
+                        <p class="text-2xl font-bold text-green-500 mb-2">The Award-Winning Founder & CMD</p>
                         <h4 class="text-4xl font-black text-white mb-4">Yanamala Raju</h4>
                         <p class="text-gray-300 text-base italic max-w-lg">
-                            <strong>The Visionary:</strong> "Real estate is the right place and the right time for investment." Mr. Raju ensures every project adheres to the highest standards of quality and transparency, built on the promise to be the true financial friend to every investor.
+                            **Man of Integrity and Deep Experience:** Mr. Raju, through Yanamala Developers, brings years of profound market knowledge and integrity to every deal. His vision—"Real estate is the right place and the right time for investment"—is backed by a commitment to transparency and securing generational wealth for his clients.
                         </p>
                     </div>
                 </div>
 
-                <!-- Founder's Video Section (moved down as requested) -->
+                <!-- Founder's Video Section -->
                 <div class="premium-card p-8 rounded-2xl scroll-reveal">
-                    <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> The Founder & CMD </h3>
-                    <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-xl shadow-2xl">
-                        <!-- Placeholder for Founder's Video (Update URL to your specific video) -->
-                        <iframe class="w-full aspect-[16/9] rounded-xl" 
-                                img src="assets/CMD Sir AV (1).mp4" 
-                                title="Founder's Message" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
-                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> CMD గారి సందేశం (Message from the CMD) </h3>
+                    <iframe class="w-full aspect-[16/9] rounded-xl shadow-2xl" 
+                            src="https://www.youtube.com/embed/k_x0vLg2j10" 
+                            title="Founder's Message" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
                     <p class="text-gray-400 mt-4 text-sm italic"> Yanamala Raju </p>
                 </div>
                 <!-- END Founder's Video Section -->
@@ -372,6 +419,8 @@
 
             <!-- Grid for Videos and Photos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Note: Placeholders assume existing assets match the content. User should update with actual images. -->
 
                 <!-- Photo Testimonial Card 1 (New Handover 1) -->
                 <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
@@ -571,7 +620,7 @@
                  return (target / 1000).toFixed(0) + 'K+';
             } else if (target < 100 && num >= target) {
                 // For years, ensure the plus sign is included in the final format
-                return formatted;
+                return formatted + '+'; // Changed to always add the plus sign for the final 'Years' count
             }
             return formatted;
         };
@@ -591,7 +640,7 @@
                 start = Math.min(target, step * increment);
                 
                 // Update display 
-                element.textContent = formatNumber(start, target) + (suffix || '');
+                element.textContent = formatNumber(start, target);
 
                 if (step >= steps) {
                     // Final display
@@ -763,15 +812,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
