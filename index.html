@@ -59,23 +59,23 @@
             background-color: var(--accent-color);
             color: var(--primary-color);
             transition: all 0.4s ease;
-            box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5); /* Stronger initial glow */
             font-weight: 700;
         }
         .glow-btn:hover {
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.8), 0 0 40px rgba(34, 197, 94, 0.4);
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.9), 0 0 50px rgba(34, 197, 94, 0.5); /* Brighter hover glow */
             background-color: #4ade80; /* A brighter green */
         }
         /* Style for the Whatsapp button in the hero section */
         .whatsapp-btn {
             background-color: #10b981 !important; /* Tailwind emerald-500 equivalent */
-            box-shadow: 0 0 5px rgba(16, 185, 129, 0.5) !important;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.7) !important;
             color: white !important;
         }
         .whatsapp-btn:hover {
             background-color: #059669 !important; /* Tailwind emerald-600 equivalent */
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.8), 0 0 40px rgba(16, 185, 129, 0.4) !important;
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.9), 0 0 50px rgba(16, 185, 129, 0.5) !important;
         }
 
 
@@ -89,7 +89,7 @@
         .premium-card:hover {
             border-color: var(--accent-color);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4); /* Enhanced hover glow */
         }
         
         /* Specific styling for the Founder's Card to highlight it - Now Green Accent */
@@ -97,6 +97,8 @@
             border-color: var(--accent-color);
             background: rgba(34, 197, 94, 0.08); /* Slight accent background */
             padding: 3rem; /* Increased padding for more space */
+            /* Added subtle, permanent pulse effect to highlight this card */
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
         }
 
         /* UPDATED: Changed to a HORIZONTAL Separator Animation */
@@ -187,13 +189,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Aspect Ratio for 9:16 Video */
+        /* Aspect Ratio for 9:16 Video (Kept for potential future use, though content changed) */
         .aspect-9-16 {
             position: relative;
-            /* 16 / 9 = 1.777. 9 / 16 = 0.5625 (56.25%) */
-            padding-bottom: 177.77%; /* 16/9 aspect ratio height in percentage for the width */
+            padding-bottom: 177.77%; 
             width: 100%;
-            max-width: 300px; /* Limit max width for portrait video */
+            max-width: 300px; 
             margin: 0 auto;
         }
         .aspect-9-16 iframe {
@@ -202,6 +203,39 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        /* NEW FEATURE: STICKY QUICK CONTACT WIDGET */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            border-top: 1px solid rgba(34, 197, 94, 0.3);
+            transition: transform 0.3s ease-out;
+            transform: translateY(100%); /* Start hidden */
+            padding: 0.75rem 0;
+        }
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+        .sticky-cta .contact-btn {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border-radius: 9999px;
+            text-align: center;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .sticky-cta .whatsapp-fixed {
+            background-color: #10b981;
+            color: white;
+        }
+        .sticky-cta .call-fixed {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
         }
 
     </style>
@@ -253,7 +287,7 @@
     </header>
 
     <!-- 1. HERO SECTION -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden">
+    <section id="hero-section" class="relative min-h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden">
         <canvas id="motion-background" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
         
         <div class="absolute inset-0 bg-black/70"></div>
@@ -290,6 +324,19 @@
             </div>
         </div>
     </section>
+
+    <!-- NEW FEATURE: STICKY QUICK CONTACT WIDGET (Mobile Only) -->
+    <div id="sticky-cta-widget" class="sticky-cta md:hidden">
+        <div class="max-w-md mx-auto px-4 flex space-x-4">
+            <a href="tel:+919000100280" class="contact-btn call-fixed">
+                <i class="fas fa-phone-alt mr-1"></i> Call Now
+            </a>
+            <a href="https://wa.me/919000100280?text=Hello%20Yanamala%20Developers,%20I%20am%20interested%20in%20your%20projects%20and%20would%20like%20to%20know%20more%20about%20investment%20opportunities." target="_blank" class="contact-btn whatsapp-fixed">
+                <i class="fab fa-whatsapp mr-1"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+    <!-- END NEW FEATURE -->
 
     <!-- 2. VALUE PROPOSITION -->
     <section id="value" class="py-24 max-w-7xl mx-auto px-6">
@@ -361,24 +408,26 @@
             </p>
 
             <div class="premium-card p-6 md:p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
-                <!-- Tab Buttons -->
+                <!-- Tab Buttons (Updated) -->
                 <div class="flex flex-wrap justify-center space-x-2 md:space-x-8 border-b border-white/10 mb-8">
                     <button data-tab="awards" class="tab-button active" onclick="switchRecognitionTab('awards')">
                         <i class="fas fa-trophy mr-2"></i> Main Awards
                     </button>
+                    <!-- RENAMED: Media & Celebrity Mentions -->
                     <button data-tab="media" class="tab-button" onclick="switchRecognitionTab('media')">
-                        <i class="fas fa-newspaper mr-2"></i> Media & Celebrity Mentions
+                        <i class="fas fa-camera-retro mr-2"></i> Celebrity Photo Gallery
                     </button>
-                    <button data-tab="video" class="tab-button" onclick="switchRecognitionTab('video')">
-                        <i class="fas fa-video mr-2"></i> Award Video
+                    <!-- RENAMED: Award Video to Media Coverage Proof. ID changed to 'news' -->
+                    <button data-tab="news" class="tab-button" onclick="switchRecognitionTab('news')">
+                        <i class="fas fa-tv mr-2"></i> Media Coverage Proof
                     </button>
                 </div>
 
-                <!-- Tab Content 1: Main Awards (Biz Network) -->
+                <!-- Tab Content 1: Main Awards (Kept as is) -->
                 <div id="tab-awards" class="tab-content">
                     <div class="flex flex-col md:flex-row items-center justify-around space-y-8 md:space-y-0 md:space-x-12">
                         <!-- Placeholder for CMD Receiving Award Image -->
-                        <img src="Best Re-Sale Real Estate Firmassets/Biz Networks Real Estate Syndicate Award.mp4" alt="Yanamala Raju receiving Real Estate 2025 Business Award" 
+                        <img src="assets/Biz Networks Real Estate Syndicate Award.mp4" alt="Yanamala Raju receiving Real Estate 2025 Business Award" 
                              class="w-full max-w-sm md:max-w-xs object-cover rounded-xl shadow-2xl border-4 border-green-500/50" 
                              onerror="this.src='https://placehold.co/300x400/22c55e/0c0a09?text=AWARD+WINNER'">
                         
@@ -393,49 +442,116 @@
                     </div>
                 </div>
 
-                <!-- Tab Content 2: Media Mentions and Celebrity Awards -->
+                <!-- Tab Content 2: Celebrity Photo Gallery (NEW CONTENT) -->
                 <div id="tab-media" class="tab-content hidden">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                        
-                        <div class="bg-black/20 p-4 rounded-xl shadow-lg border border-white/10 hover:border-green-500/50 transition">
-                            <i class="fas fa-star text-yellow-400 text-3xl mb-3"></i>
-                            <h4 class="text-xl font-bold text-white mb-2">Celebrity Felicitation (1)</h4>
-                            <p class="text-sm text-gray-400">Award received from a prominent celebrity, acknowledging integrity in resale practices. (Placeholder image)</p>
-                            <img src="https://placehold.co/200x150/000/FACC15?text=CELEB+AWARD+1" alt="Celebrity Award 1" class="w-full h-auto mt-4 rounded-lg">
+                    <h3 class="text-3xl font-bold text-white mb-8">Photos with Prominent Personalities (Visual Proof)</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                        <!-- Photo Box 1 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb1.jpg.jpg" alt="CMD with Celebrity 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+1'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Personality Meet 1</span>
+                            </div>
                         </div>
-
-                        <div class="bg-black/20 p-4 rounded-xl shadow-lg border border-white/10 hover:border-green-500/50 transition">
-                            <i class="fas fa-newspaper text-blue-400 text-3xl mb-3"></i>
-                            <h4 class="text-xl font-bold text-white mb-2">Newspaper Clipping (2)</h4>
-                            <p class="text-sm text-gray-400">Scan of the news article highlighting Yanamala Raju's dedication to clear-title deals and guaranteed returns.</p>
-                            <img src="https://placehold.co/200x150/000/60A5FA?text=NEWS+CLIPPING" alt="Newspaper Clipping" class="w-full h-auto mt-4 rounded-lg">
+                        <!-- Photo Box 2 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb2.jpg.jpg" alt="CMD with Celebrity 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+2'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Award Event</span>
+                            </div>
                         </div>
-                        
-                        <div class="bg-black/20 p-4 rounded-xl shadow-lg border border-white/10 hover:border-green-500/50 transition">
-                            <i class="fas fa-star text-yellow-400 text-3xl mb-3"></i>
-                            <h4 class="text-xl font-bold text-white mb-2">Celebrity Felicitation (2)</h4>
-                            <p class="text-sm text-gray-400">Second prestigious award presented by a renowned film personality in Hyderabad. (Placeholder image)</p>
-                            <img src="https://placehold.co/200x150/000/FACC15?text=CELEB+AWARD+2" alt="Celebrity Award 2" class="w-full h-auto mt-4 rounded-lg">
+                        <!-- Photo Box 3 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb3.jpg.jpg" alt="CMD with Celebrity 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+3'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Business Summit</span>
+                            </div>
+                        </div>
+                        <!-- Photo Box 4 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb4.jpg.jpg" alt="CMD with Celebrity 4" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+4'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Felicitation</span>
+                            </div>
+                        </div>
+                        <!-- Photo Box 5 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb5.jpg.jpg" alt="CMD with Celebrity 5" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+5'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Media Talk</span>
+                            </div>
+                        </div>
+                        <!-- Photo Box 6 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb6.jpg.jpg" alt="CMD with Celebrity 6" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+6'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Public Event</span>
+                            </div>
+                        </div>
+                        <!-- Photo Box 7 (Hidden on small screens) -->
+                        <div class="hidden sm:block relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb7.jpg.jpg" alt="CMD with Celebrity 7" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+7'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Investor Meeting</span>
+                            </div>
+                        </div>
+                        <!-- Photo Box 8 (Hidden on small screens) -->
+                        <div class="hidden sm:block relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assetsceleb8.jpg.jpg" alt="CMD with Celebrity 8" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+8'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Inauguration</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tab Content 3: 9:16 Vertical Video -->
-                <div id="tab-video" class="tab-content hidden">
-                    <h3 class="text-3xl font-bold text-white mb-6">Vertical Video Highlight (9:16)</h3>
-                    <p class="text-gray-400 mb-8 max-w-xl mx-auto">Watch a mobile-optimized video summarizing our award and commitment to investors. Ideal for sharing on social media!</p>
-                    
-                    <!-- Container for the 9:16 aspect ratio -->
-                    <div class="aspect-9-16 mx-auto">
-                         <iframe 
-                             src="https://www.youtube.com/embed/k_x0vLg2j10" 
-                             title="9:16 Vertical Award Video" 
-                             frameborder="0" 
-                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                             allowfullscreen>
-                         </iframe>
+                <!-- Tab Content 3: Media Coverage Proof (NEW CONTENT) -->
+                <div id="tab-news" class="tab-content hidden">
+                    <h3 class="text-3xl font-bold text-white mb-8">Print & News Channel Mentions (Visual Proof)</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                        <!-- Media 1 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assets/media12.jpg" alt="Newspaper Clipping 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+1'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Major Daily</span>
+                            </div>
+                        </div>
+                        <!-- Media 2 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assets/media16.jpg" alt="News Channel Screenshot" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Business Channel</span>
+                            </div>
+                        </div>
+                        <!-- Media 3 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assets/media_2.jpg.jpg" alt="Newspaper Clipping 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+2'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Regional News</span>
+                            </div>
+                        </div>
+                        <!-- Media 4 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assets/media_4.jpg.jpg" alt="News Channel Screenshot 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN+2'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Interview Snippet</span>
+                            </div>
+                        </div>
+                        <!-- Media 5 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assets/media_5.jpg.jpg" alt="Newspaper Clipping 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+3'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Financial Section</span>
+                            </div>
+                        </div>
+                        <!-- Media 6 -->
+                        <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
+                            <img src="assets/media_6.jpg.jpg" alt="News Channel Screenshot 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN+3'">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-sm text-green-400 font-semibold">Real Estate Talk</span>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
             </div>
@@ -486,10 +602,10 @@
                 <div class="premium-card p-8 rounded-2xl scroll-reveal">
                     <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> CMD గారి సందేశం (Message from the CMD) </h3>
                     <iframe class="w-full aspect-[16/9] rounded-xl shadow-2xl" 
-                                src="https://www.youtube.com/embed/k_x0vLg2j10" 
-                                title="Founder's Message" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
+                                 src="https://www.youtube.com/embed/k_x0vLg2j10" 
+                                 title="Founder's Message" frameborder="0" 
+                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                 allowfullscreen></iframe>
                     <p class="text-gray-400 mt-4 text-sm italic"> Yanamala Raju </p>
                 </div>
                 <!-- END Founder's Video Section -->
@@ -568,8 +684,8 @@
                 <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
                     <img src="assets/IMG-20251030-WA0030.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+4'">
-                    <p class="text-lg font-bold text-white">Signing the Clear Title (4)</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+1'">
+                    <p class="text-lg font-bold text-white">Signing the Clear Title (1)</p>
                     <p class="text-sm text-gray-400">Transparency is our promise.</p>
                 </div>
                 
@@ -577,72 +693,72 @@
                 <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
                     <img src="assets/IMG-20251030-WA0027.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+2'">
+                    <p class="text-lg font-bold text-white">Plot Handover Moment (2)</p>
+                    <p class="text-sm text-gray-400">A new investor joins the Yanamala family.</p>
                 </div>
 
                 <!-- Photo Testimonial Card 3 (New Handover 3) -->
-                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
+                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.6s;">
                     <img src="assets/IMG-20251030-WA0026.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+3'">
+                    <p class="text-lg font-bold text-white">Family Investment Handover (3)</p>
+                    <p class="text-sm text-gray-400">Securing generational wealth.</p>
                 </div>
                 
                 <!-- Photo Testimonial Card 4 (New Handover 4) -->
-                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
+                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.7s;">
                     <img src="assets/IMG-20251030-WA0028.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+4'">
+                    <p class="text-lg font-bold text-white">Plot Handover Moment (4)</p>
                     <p class="text-sm text-gray-400">Transparency is our promise.</p>
                 </div>
 
                 <!-- Photo Testimonial Card 5 (New Handover 5) -->
-                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
+                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.8s;">
                     <img src="assets/IMG-20251030-WA0033.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
                          onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
                     <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                    <p class="text-sm text-gray-400">Ready to build your dream home.</p>
                 </div>
 
                 <!-- Photo Testimonial Card 6 (New Handover 6) -->
-                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
+                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.9s;">
                     <img src="assets/IMG-20251030-WA0032.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+6'">
+                    <p class="text-lg font-bold text-white">Plot Handover Moment (6)</p>
+                    <p class="text-sm text-gray-400">High-growth investment secured.</p>
                 </div>
 
                 <!-- Photo Testimonial Card 7 (New Handover 7) -->
-                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
+                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 1.0s;">
                     <img src="assets/IMG-20251030-WA0031.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+7'">
+                    <p class="text-lg font-bold text-white">Plot Handover Moment (7)</p>
+                    <p class="text-sm text-gray-400">A true friend for financial growth.</p>
                 </div>
 
                 <!-- Photo Testimonial Card 8 (New Handover 8) -->
-                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
+                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 1.1s;">
                     <img src="assets/IMG-20251030-WA0034.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+8'">
+                    <p class="text-lg font-bold text-white">Plot Handover Moment (8)</p>
+                    <p class="text-sm text-gray-400">Guaranteed resale expertise.</p>
                 </div>
 
-                <!-- Photo Testimonial Card 8 (New Handover 8) -->
-                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.5s;">
+                <!-- Photo Testimonial Card 9 (New Handover 9) -->
+                <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 1.2s;">
                     <img src="assets/WhatsApp Image 2025-10-30 at 17.53.42_4b7191d4.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4"
-                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+5'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (5)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                         onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+9'">
+                    <p class="text-lg font-bold text-white">Plot Handover Moment (9)</p>
+                    <p class="text-sm text-gray-400">Best price challenge accepted!</p>
                 </div>
 
             </div>
@@ -793,176 +909,22 @@
                 content.classList.add('hidden');
             });
 
+            // Note: Updated the third tab to look for the 'news' ID
             document.querySelector(`.tab-button[data-tab="${tabName}"]`).classList.add('active');
             document.getElementById(`tab-${tabName}`).classList.remove('hidden');
         }
-        // --- END TAB SWITCHING LOGIC ---
-
-
-        // --- SCROLL ANIMATION LOGIC (For .scroll-reveal and .separator-line) ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    // Stop observing once visible
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 }); // Trigger when 15% of element is visible
-
-        document.querySelectorAll('.scroll-reveal, .separator-line').forEach(element => {
-            observer.observe(element);
-        });
-
-        // Simple Parallax Effect on Hero Background (Kept for premium feel)
-        function handleParallax() {
-            // NOTE: The .hero-bg class is missing, but leaving this function for future background implementation
-            const heroSection = document.querySelector('.hero-bg'); 
-            if (heroSection) {
-                const scrolled = window.scrollY;
-                heroSection.style.backgroundPositionY = -(scrolled * 0.2) + 'px';
-            }
-        }
-
-        // --- COUNTING ANIMATION LOGIC (For .counter-number) ---
-        const formatNumber = (num, target) => {
-            if (target < 100) return Math.floor(num);
-
-            // Format numbers greater than or equal to 1000 with commas (Indian style)
-            const formatted = Math.floor(num).toLocaleString('en-IN');
-            
-            // Add K suffix only for the final large count display
-            if (target >= 5000 && num >= target) {
-                 return (target / 1000).toFixed(0) + 'K+';
-            } else if (target < 100 && num >= target) {
-                // For years, ensure the plus sign is included in the final format
-                return formatted + '+'; // Changed to always add the plus sign for the final 'Years' count
-            }
-            return formatted;
-        };
-
-        const animateCount = (element, target, duration, suffix) => {
-            // Use a unique attribute to prevent re-animation
-            if (element.getAttribute('data-animated') === 'true') return;
-            element.setAttribute('data-animated', 'true');
-
-            let start = 0;
-            const steps = 100; 
-            const increment = target / steps;
-            let step = 0;
-            
-            const timer = setInterval(() => {
-                step++;
-                start = Math.min(target, step * increment);
-                
-                // Update display 
-                element.textContent = formatNumber(start, target);
-
-                if (step >= steps) {
-                    // Final display
-                    element.textContent = formatNumber(target, target) + (suffix || '');
-                    clearInterval(timer);
-                }
-                
-            }, duration / steps); 
-        };
-
-        const metricElements = document.querySelectorAll('.metric-box');
-        let metricsAnimated = false;
-
-        const countObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !metricsAnimated) {
-                    // Start animation for all metrics when the first one enters view
-                    metricElements.forEach(el => {
-                        const countEl = el.querySelector('.counter-number');
-                        const t = parseInt(el.getAttribute('data-target'));
-                        const s = el.getAttribute('data-suffix');
-                        if (countEl && t) {
-                           animateCount(countEl, t, 1500, s);
-                        }
-                    });
-                    metricsAnimated = true;
-                    observer.disconnect(); // Stop observing after animation starts
-                }
-            });
-        }, { threshold: 0.2 }); 
-
-        metricElements.forEach(element => {
-            countObserver.observe(element);
-        });
-        
-        // **CRITICAL FIX: Manual Visibility Check on Scroll/Load**
-        function checkMetricsVisibility() {
-            const metricsSection = document.getElementById('metrics');
-            if (metricsSection) {
-                const rect = metricsSection.getBoundingClientRect();
-                // Check if any part of the metrics section is in the viewport
-                const isVisible = (rect.top < window.innerHeight && rect.bottom >= 0);
-
-                if (isVisible && !metricsAnimated) {
-                    // Directly call the animation trigger function
-                    metricElements.forEach(el => {
-                        const countEl = el.querySelector('.counter-number');
-                        const t = parseInt(el.getAttribute('data-target'));
-                        const s = el.getAttribute('data-suffix');
-                        if (countEl && t) {
-                            animateCount(countEl, t, 1500, s);
-                        }
-                    });
-                    metricsAnimated = true;
-                    // Stop future observer checks once animated
-                    countObserver.disconnect();
-                    window.removeEventListener('scroll', checkMetricsVisibility); 
-                }
-            }
-        }
-        // --- END COUNTING ANIMATION LOGIC ---
-
-        // --- FORM SUBMISSION LOGIC (Client-side simulation) ---
-        document.getElementById('lead-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const name = form.name.value;
-            const phone = form.phone.value;
-            const interest = form.interest.options[form.interest.selectedIndex].text;
-            const messageEl = document.getElementById('form-message');
-
-            // Simple validation
-            if (!name || !phone || form.interest.value === "") {
-                messageEl.classList.remove('hidden', 'bg-green-700/20', 'text-green-300');
-                messageEl.classList.add('bg-red-700/20', 'text-red-300');
-                messageEl.textContent = 'Please fill out your Name and Phone Number.';
-                return;
-            }
-
-            // Simulate sending data (in a real app, this would be an API call)
-            console.log(`Lead Captured - Name: ${name}, Phone: ${phone}, Interest: ${interest}`);
-
-            // Display success message
-            messageEl.classList.remove('hidden', 'bg-red-700/20', 'text-red-300');
-            messageEl.classList.add('bg-green-700/20', 'text-green-300');
-            messageEl.innerHTML = `<i class="fas fa-check-circle mr-2"></i> Thank you, <strong>${name}</strong>! Your inquiry about ${interest} has been successfully submitted. Our team will call you back on ${phone} shortly to share exclusive details.`;
-
-            // Clear the form
-            form.reset();
-
-            // Hide message after a few seconds
+        // Initialize the first tab as visible on load
+        window.onload = () => {
+             // Delay to ensure all elements are ready
             setTimeout(() => {
-                messageEl.classList.add('hidden');
-            }, 6000);
-        });
-        // --- END FORM SUBMISSION LOGIC ---
+                switchRecognitionTab('awards');
+            }, 50);
 
-        window.onload = function() {
-            window.addEventListener('scroll', handleParallax);
-            // Run the new check on load and attach it to scroll for environments where IntersectionObserver fails to fire on initial load
-            window.addEventListener('scroll', checkMetricsVisibility);
-            checkMetricsVisibility(); 
-
-            // --- NEW: CANVAS MOTION BACKGROUND LOGIC ---
+            // --- CANVAS MOTION BACKGROUND LOGIC ---
             const canvas = document.getElementById('motion-background');
+            // Check if canvas is supported and present
+            if (!canvas || !canvas.getContext) return;
+
             const ctx = canvas.getContext('2d');
             let particlesArray;
 
@@ -1005,9 +967,8 @@
             // Create particle array
             function init() {
                 particlesArray = [];
-                let numberOfParticles = (canvas.height * canvas.width) / 9000;
-                // Limit particles on very large screens to prevent performance issues
-                numberOfParticles = Math.min(numberOfParticles, 150); 
+                // Limit particles to ensure smooth performance
+                let numberOfParticles = Math.min(Math.floor((canvas.height * canvas.width) / 9000), 150); 
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 2) + 1;
                     // FIXED: Used canvas.width/height instead of innerWidth/innerHeight for consistency
@@ -1038,6 +999,7 @@
                     for (let b = a; b < particlesArray.length; b++) {
                         let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
                                              ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                        // Connection distance scaled relative to screen size for consistency
                         if (distance < (canvas.width / 7) * (canvas.height / 7)) {
                             opacityValue = 1 - (distance / 20000);
                             ctx.strokeStyle = `rgba(34, 197, 94, ${opacityValue})`; // Using green accent color with opacity
@@ -1061,8 +1023,151 @@
             animate();
             // --- END CANVAS LOGIC ---
         };
+        // --- END TAB SWITCHING LOGIC ---
+
+
+        // --- SCROLL ANIMATION LOGIC (For .scroll-reveal and .separator-line) ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stop observing once visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 }); // Trigger when 15% of element is visible
+
+        document.querySelectorAll('.scroll-reveal, .separator-line').forEach(element => {
+            observer.observe(element);
+        });
+
+        // --- COUNTING ANIMATION LOGIC (For .counter-number) ---
+        const formatNumber = (num, target) => {
+            // Special formatting for numbers under 100 (like '8+')
+            if (target < 100) {
+                 // Ensure the '+' suffix is only added when the count is complete
+                return Math.floor(num) + (num >= target ? '+' : '');
+            }
+
+            // Format large numbers (Indian numbering system is implicit with 'en-IN')
+            const formatted = Math.floor(num).toLocaleString('en-IN');
+            
+            // Add K suffix only for the final large count display (5000+ -> 5K+)
+            if (target >= 5000 && num >= target) {
+                return (target / 1000).toFixed(0) + 'K+';
+            }
+            return formatted;
+        };
+
+        const animateCount = (element, target, duration, suffix) => {
+            // Use a unique attribute to prevent re-animation
+            if (element.getAttribute('data-animated') === 'true') return;
+            element.setAttribute('data-animated', 'true');
+
+            let start = 0;
+            const steps = 100; 
+            const increment = target / steps;
+            let step = 0;
+            
+            const timer = setInterval(() => {
+                step++;
+                start = Math.min(target, step * increment);
+                
+                // Update display 
+                element.textContent = formatNumber(start, target);
+
+                if (step >= steps) {
+                    // Final display
+                    element.textContent = formatNumber(target, target);
+                    clearInterval(timer);
+                }
+                
+            }, duration / steps); 
+        };
+
+        const metricElements = document.querySelectorAll('.metric-box');
+        let metricsAnimated = false;
+
+        // Use IntersectionObserver specifically for the count animation trigger
+        const countObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !metricsAnimated) {
+                    // Start animation for all metrics when the section enters view
+                    metricElements.forEach(el => {
+                        const countEl = el.querySelector('.counter-number');
+                        const t = parseInt(el.getAttribute('data-target'));
+                        const s = el.getAttribute('data-suffix');
+                        if (countEl && t) {
+                           animateCount(countEl, t, 1500, s);
+                        }
+                    });
+                    metricsAnimated = true;
+                    observer.disconnect(); // Stop observing after animation starts
+                }
+            });
+        }, { threshold: 0.2 }); 
+
+        metricElements.forEach(element => {
+            countObserver.observe(element);
+        });
+        
+        // --- FORM SUBMISSION LOGIC (Client-side simulation) ---
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const name = form.name.value;
+            const phone = form.phone.value;
+            const interest = form.interest.options[form.interest.selectedIndex].text;
+            const messageEl = document.getElementById('form-message');
+
+            // Simple validation
+            if (!name || !phone || form.interest.value === "") {
+                messageEl.classList.remove('hidden', 'bg-green-700/20', 'text-green-300');
+                messageEl.classList.add('bg-red-700/20', 'text-red-300');
+                messageEl.textContent = 'Please fill out your Name and Phone Number.';
+                return;
+            }
+
+            // Simulate sending data (in a real app, this would be an API call)
+            console.log(`Lead Captured - Name: ${name}, Phone: ${phone}, Interest: ${interest}`);
+
+            // Display success message
+            messageEl.classList.remove('hidden', 'bg-red-700/20', 'text-red-300');
+            messageEl.classList.add('bg-green-700/20', 'text-green-300');
+            messageEl.innerHTML = `<i class="fas fa-check-circle mr-2"></i> Thank you, <strong>${name}</strong>! Your inquiry about ${interest} has been successfully submitted. Our team will call you back on ${phone} shortly to share exclusive details.`;
+
+            // Clear the form
+            form.reset();
+
+            // Hide message after a few seconds
+            setTimeout(() => {
+                messageEl.classList.add('hidden');
+            }, 6000);
+        });
+        // --- END FORM SUBMISSION LOGIC ---
+
+        // --- NEW FEATURE: STICKY CTA LOGIC ---
+        const heroSection = document.getElementById('hero-section');
+        const stickyCta = document.getElementById('sticky-cta-widget');
+        
+        const ctaObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // If the hero section is NOT intersecting (i.e., we have scrolled past it)
+                if (!entry.isIntersecting) {
+                    stickyCta.classList.add('visible');
+                } else {
+                    stickyCta.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0 }); // Trigger immediately when 0% of hero is visible
+
+        if (heroSection && stickyCta) {
+            ctaObserver.observe(heroSection);
+        }
+        // --- END STICKY CTA LOGIC ---
+
     </script>
 
 </body>
 </html>
-
