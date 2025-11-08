@@ -189,20 +189,20 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Aspect Ratio for 9:16 Video (Kept for potential future use, though content changed) */
-        .aspect-9-16 {
+        /* Vertical Aspect Ratio Wrapper (9:16) for Video/Images */
+        .vertical-media-wrapper {
             position: relative;
-            padding-bottom: 177.77%; 
+            padding-bottom: 177.77%; /* Height is 177.77% of Width (9:16 aspect ratio) */
+            height: 0;
             width: 100%;
-            max-width: 300px; 
-            margin: 0 auto;
         }
-        .aspect-9-16 iframe {
+        .vertical-media-wrapper video, .vertical-media-wrapper img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
         /* NEW FEATURE: STICKY QUICK CONTACT WIDGET */
@@ -423,13 +423,20 @@
                     </button>
                 </div>
 
-                <!-- Tab Content 1: Main Awards (Kept as is) -->
+                <!-- Tab Content 1: Main Awards (Replaced image with video) -->
                 <div id="tab-awards" class="tab-content">
                     <div class="flex flex-col md:flex-row items-center justify-around space-y-8 md:space-y-0 md:space-x-12">
-                        <!-- Placeholder for CMD Receiving Award Image -->
-                        <img src="assets/Biz Networks Real Estate Syndicate Award.mp4" alt="Yanamala Raju receiving Real Estate 2025 Business Award" 
-                             class="w-full max-w-sm md:max-w-xs object-cover rounded-xl shadow-2xl border-4 border-green-500/50" 
-                             onerror="this.src='https://placehold.co/300x400/22c55e/0c0a09?text=AWARD+WINNER'">
+                        <!-- Replaced image with 9:16 Video for Main Awards -->
+                        <div class="w-full max-w-sm md:max-w-xs mx-auto">
+                            <div class="vertical-media-wrapper rounded-xl shadow-2xl border-4 border-green-500/50 overflow-hidden">
+                                <video controls autoplay loop muted 
+                                    class="w-full h-full"
+                                >
+                                    <source src="assets/Biz Networks Real Estate Syndicate Award.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
                         
                         <div class="text-left space-y-4">
                             <span class="text-sm font-bold text-red-500 uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Primary Focus</span>
@@ -442,62 +449,55 @@
                     </div>
                 </div>
 
-                <!-- Tab Content 2: Celebrity Photo Gallery (NEW CONTENT) -->
+                <!-- Tab Content 2: Celebrity Photo Gallery (Image paths cleaned for consistency) -->
                 <div id="tab-media" class="tab-content hidden">
                     <h3 class="text-3xl font-bold text-white mb-8">Photos with Prominent Personalities (Visual Proof)</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                        <!-- Photo Box 1 -->
+                        <!-- Paths standardized to celeb_1.jpg, etc. (user must rename files to match) -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb1.jpg.jpg" alt="CMD with Celebrity 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+1'">
+                            <img src="assets/celeb_1.jpg" alt="CMD with Celebrity 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+1'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Personality Meet 1</span>
                             </div>
                         </div>
-                        <!-- Photo Box 2 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb2.jpg.jpg" alt="CMD with Celebrity 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+2'">
+                            <img src="assets/celeb_2.jpg" alt="CMD with Celebrity 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+2'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Award Event</span>
                             </div>
                         </div>
-                        <!-- Photo Box 3 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb3.jpg.jpg" alt="CMD with Celebrity 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+3'">
+                            <img src="assets/celeb_3.jpg" alt="CMD with Celebrity 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+3'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Business Summit</span>
                             </div>
                         </div>
-                        <!-- Photo Box 4 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb4.jpg.jpg" alt="CMD with Celebrity 4" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+4'">
+                            <img src="assets/celeb_4.jpg" alt="CMD with Celebrity 4" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+4'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Felicitation</span>
                             </div>
                         </div>
-                        <!-- Photo Box 5 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb5.jpg.jpg" alt="CMD with Celebrity 5" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+5'">
+                            <img src="assets/celeb_5.jpg" alt="CMD with Celebrity 5" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+5'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Media Talk</span>
                             </div>
                         </div>
-                        <!-- Photo Box 6 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb6.jpg.jpg" alt="CMD with Celebrity 6" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+6'">
+                            <img src="assets/celeb_6.jpg" alt="CMD with Celebrity 6" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+6'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Public Event</span>
                             </div>
                         </div>
-                        <!-- Photo Box 7 (Hidden on small screens) -->
                         <div class="hidden sm:block relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb7.jpg.jpg" alt="CMD with Celebrity 7" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+7'">
+                            <img src="assets/celeb_7.jpg" alt="CMD with Celebrity 7" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+7'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Investor Meeting</span>
                             </div>
                         </div>
-                        <!-- Photo Box 8 (Hidden on small screens) -->
                         <div class="hidden sm:block relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assetsceleb8.jpg.jpg" alt="CMD with Celebrity 8" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+8'">
+                            <img src="assets/celeb_8.jpg" alt="CMD with Celebrity 8" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+8'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Inauguration</span>
                             </div>
@@ -505,48 +505,43 @@
                     </div>
                 </div>
 
-                <!-- Tab Content 3: Media Coverage Proof (NEW CONTENT) -->
+                <!-- Tab Content 3: Media Coverage Proof (Image paths cleaned for consistency) -->
                 <div id="tab-news" class="tab-content hidden">
                     <h3 class="text-3xl font-bold text-white mb-8">Print & News Channel Mentions (Visual Proof)</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                        <!-- Media 1 -->
+                        <!-- Paths standardized to media_1.jpg, etc. (user must rename files to match) -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assets/media12.jpg" alt="Newspaper Clipping 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+1'">
+                            <img src="assets/media_1.jpg" alt="Newspaper Clipping 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+1'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Major Daily</span>
                             </div>
                         </div>
-                        <!-- Media 2 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assets/media16.jpg" alt="News Channel Screenshot" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN'">
+                            <img src="assets/media_2.jpg" alt="News Channel Screenshot" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Business Channel</span>
                             </div>
                         </div>
-                        <!-- Media 3 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assets/media_2.jpg.jpg" alt="Newspaper Clipping 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+2'">
+                            <img src="assets/media_3.jpg" alt="Newspaper Clipping 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+2'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Regional News</span>
                             </div>
                         </div>
-                        <!-- Media 4 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assets/media_4.jpg.jpg" alt="News Channel Screenshot 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN+2'">
+                            <img src="assets/media_4.jpg" alt="News Channel Screenshot 2" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN+2'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Interview Snippet</span>
                             </div>
                         </div>
-                        <!-- Media 5 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assets/media_5.jpg.jpg" alt="Newspaper Clipping 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+3'">
+                            <img src="assets/media_5.jpg" alt="Newspaper Clipping 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+PAPER+3'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Financial Section</span>
                             </div>
                         </div>
-                        <!-- Media 6 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03]">
-                            <img src="assets/media_6.jpg.jpg" alt="News Channel Screenshot 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN+3'">
+                            <img src="assets/media_6.jpg" alt="News Channel Screenshot 3" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=CHANNEL+SCREEN+3'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <span class="text-sm text-green-400 font-semibold">Real Estate Talk</span>
                             </div>
@@ -587,8 +582,8 @@
 
                 <!-- This is the founder card (moved up) -->
                 <div class="premium-card founder-card rounded-2xl flex flex-col items-center text-center p-12 scroll-reveal">
-                    <!-- Updated Image Path and Fallback for Professional Portrait -->
-                    <img src="assets/CMD_Raju_Portrait.jpg" alt="Yanamala Raju - Founder & CMD" class="rounded-full shadow-2xl w-48 h-48 object-cover mb-6 border-4 border-green-600" onerror="this.src='https://placehold.co/192x192/22c55e/0c0a09?text=Raju+CMD'">
+                    <!-- Path corrected to founder_raju.jpg (matching uploaded asset) -->
+                    <img src="assets/founder_raju.jpg" alt="Yanamala Raju - Founder & CMD" class="rounded-full shadow-2xl w-48 h-48 object-cover mb-6 border-4 border-green-600" onerror="this.src='https://placehold.co/192x192/22c55e/0c0a09?text=Raju+CMD'">
                     <div>
                         <p class="text-2xl font-bold text-green-500 mb-2">The Award-Winning Founder & CMD</p>
                         <h4 class="text-4xl font-black text-white mb-4">Yanamala Raju</h4>
@@ -644,7 +639,8 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
                 <div>
-                    <img src="assets/WhatsApp Image 2025-09-13 at 18.02.04_353d472f - Copy.jpg" alt="Shadnagar Plots" class="rounded-xl shadow-2xl w-full transition duration-500 hover:scale-[1.01] hover:shadow-green-500/30" onerror="this.src='https://placehold.co/600x400/3f3f46/22c55e?text=Shadnagar+Plots+Aerial'">
+                    <!-- Path corrected to clean image name (user must rename file) -->
+                    <img src="assets/shadnagar_plots.jpg" alt="Shadnagar Plots" class="rounded-xl shadow-2xl w-full transition duration-500 hover:scale-[1.01] hover:shadow-green-500/30" onerror="this.src='https://placehold.co/600x400/3f3f46/22c55e?text=Shadnagar+Plots+Aerial'">
                 </div>
                 <div class="space-y-6">
                     <p class="text-sm font-semibold text-green-500 uppercase tracking-widest">High-Growth Investment</p>
@@ -678,7 +674,8 @@
             <!-- Grid for Videos and Photos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Note: Placeholders assume existing assets match the content. User should update with actual images. -->
+                <!-- The paths in this section appear to be correct based on the asset list provided: -->
+                <!-- IMG-20251030-WA0030.jpg, IMG-20251030-WA0027.jpg, etc. -->
 
                 <!-- Photo Testimonial Card 1 (New Handover 1) -->
                 <div class="premium-card p-4 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
