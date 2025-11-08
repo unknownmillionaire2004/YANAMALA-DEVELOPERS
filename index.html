@@ -191,6 +191,29 @@
             color: var(--primary-color);
         }
 
+        /* --- TABBED INTERFACE STYLING (UPDATED) --- */
+        .tab-button {
+            padding: 0.75rem 1rem; /* pill-like padding */
+            font-weight: 600;
+            color: var(--text-color); /* Default text color */
+            border: 1px solid rgba(34, 197, 94, 0.3); /* Subtle accent border */
+            border-radius: 9999px; /* Rounded pill shape */
+            background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 0.5rem; 
+        }
+        .tab-button:hover {
+            color: var(--primary-color); /* Text turns dark on hover */
+            background-color: var(--accent-color); /* Highlight background */
+            border-color: var(--accent-color);
+        }
+        .tab-button.active {
+            color: var(--primary-color); /* Highlight active text to dark color */
+            background-color: var(--accent-color); /* Solid accent color when active */
+            border-color: var(--accent-color);
+        }
+
     </style>
 </head>
 <body>
@@ -377,8 +400,8 @@
             </p>
 
             <div class="premium-card p-6 md:p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
-                <!-- Tab Buttons (Updated) -->
-                <div class="flex flex-wrap justify-center space-x-2 md:space-x-8 border-b border-white/10 mb-8">
+                <!-- Tab Buttons (UPDATED STYLING AND CONTAINER CLASSES) -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
                     <button data-tab="awards" class="tab-button active" onclick="switchRecognitionTab('awards')">
                         <i class="fas fa-trophy mr-2"></i> Main Awards
                     </button>
@@ -835,8 +858,6 @@
 
         </div>
     </section>
-
-    <!-- REMOVED SECTION 8: CONTACT FORM -->
 
     <!-- 9. NURTURING (KNOWLEDGE HUB - MOVED DOWN) -->
     <section id="knowledge" class="py-24 bg-gray-900">
