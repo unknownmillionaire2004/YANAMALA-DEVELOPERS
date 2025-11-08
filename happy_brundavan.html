@@ -13,16 +13,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #0c0a09;
-            --accent-color: #22c55e;
-            --text-color: #f5f5f4;
+            --primary-color: #0c0a09; /* Stone Black */
+            --accent-color: #22c55e; /* Vibrant Green (Emerald) */
+            --text-color: #f5f5f4; /* Off-white */
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--primary-color);
             color: var(--text-color);
             overflow-x: hidden;
+            /* COPIED from index.html: Motion Background Implementation */
+            background-image: radial-gradient(circle at 15% 50%, rgba(34, 197, 94, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 85% 50%, rgba(34, 197, 94, 0.05) 0%, transparent 40%);
+            background-size: 200% 200%;
+            animation: gradient-move 33s ease infinite alternate;
         }
+
+        /* COPIED from index.html */
+        @keyframes gradient-move {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* COPIED from index.html: Subtle Floating Animation for the logo/icon */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); } 
+            100% { transform: translateY(0px); }
+        }
+        .floating-element {
+            animation: float 5s ease-in-out infinite;
+        }
+        
         .glow-btn {
             background-color: var(--accent-color);
             color: var(--primary-color);
@@ -51,15 +73,6 @@
             transform: translateY(0);
         }
         
-        /* Added floating animation and increased distance for larger logo */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-            100% { transform: translateY(0px); }
-        }
-        .floating-element {
-            animation: float 5s ease-in-out infinite;
-        }
         /* Custom size for the highlighted logo */
         .large-logo-img {
             height: 160px; /* Large size */
@@ -110,10 +123,13 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- Company Name / Project Name (Simplified in sticky nav) -->
             <div class="flex items-center space-x-3">
-                <div>
-                    <span class="text-xl font-black tracking-wider text-white"><span class="text-green-500">YANAMALA</span> DEVELOPERS</span>
-                    <p class="text-xs font-light text-gray-500">Happy Brundavan Project</p>
-                </div>
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Yanamala Developers Logo" class="h-10 w-auto floating-element border border-green-600/50 rounded-lg" onerror="this.src='https://placehold.co/40x40/0c0a09/22c55e?text=YI'">
+                    <div>
+                        <span class="text-xl font-black tracking-wider text-white"><span class="text-green-500">YANAMALA</span> DEVELOPERS</span>
+                        <p class="text-xs font-light text-gray-500">Happy Brundavan Project</p>
+                    </div>
+                </a>
             </div>
             <!-- CTA Button -->
             <a href="tel:+919000100280" class="glow-btn px-5 py-2 text-sm rounded-full">
@@ -124,15 +140,20 @@
 
     <!-- Main Content -->
     <main>
-        <!-- 1. Logo Masthead & Project Hero (Psychology: Brand Trust & First Impression) -->
-        <section class="py-12 md:py-16 text-center bg-gray-900/50">
-            <div class="max-w-4xl mx-auto px-6">
+        <!-- 1. Logo Masthead & Project Hero (Applied background animation/canvas) -->
+        <section id="project-hero" class="relative min-h-[50vh] flex flex-col items-center justify-center text-center p-8 overflow-hidden bg-gray-900/50">
+            <!-- CANVAS BACKGROUND (Copied from index.html) -->
+            <canvas id="motion-background" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="absolute inset-0 bg-black/70 z-10"></div>
+            
+            <div class="relative z-20 w-full max-w-4xl mx-auto">
                 <!-- Enlarged and Centered Logo -->
                 <div class="mb-6 flex justify-center scroll-reveal">
+                    <!-- Added floating-element class -->
                     <img src="assets/logo.png" alt="Yanamala Developers Logo" class="large-logo-img floating-element border border-green-600/50 rounded-2xl shadow-xl shadow-green-500/50" onerror="this.src='https://placehold.co/160x160/0c0a09/22c55e?text=YI'">
                 </div>
 
-                <!-- Project Titles (Moved up from original hero) -->
+                <!-- Project Titles -->
                 <p class="text-lg font-semibold text-green-500 uppercase tracking-widest scroll-reveal" style="transition-delay: 0.2s;">Highway Facing Luxury Villa Plots</p>
                 <h1 class="text-5xl md:text-7xl font-extrabold text-white mt-4 mb-4 scroll-reveal" style="transition-delay: 0.4s;">Happy Brundavan</h1>
                 
@@ -340,6 +361,7 @@
                                         <td>₹25799/-</td>
                                     </tr>
                                     <tr>
+                                    <tr>
                                         <td>Option C</td>
                                         <td>₹2 Lakhs Down Payment</td>
                                         <td>₹25999/-</td>
@@ -399,8 +421,14 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Scroll Animations -->
+    <!-- JavaScript for Scroll Animations & Particle Background (COPIED from index.html) -->
     <script>
+        // Get the root element for CSS variables
+        const rootStyles = getComputedStyle(document.documentElement);
+        const accentColor = rootStyles.getPropertyValue('--accent-color').trim();
+        const primaryColor = rootStyles.getPropertyValue('--primary-color').trim();
+        
+        // --- SCROLL ANIMATION LOGIC (For .scroll-reveal) ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -415,6 +443,125 @@
         document.querySelectorAll('.scroll-reveal').forEach(element => {
             observer.observe(element);
         });
+
+        // --- CANVAS MOTION BACKGROUND LOGIC (COPIED from index.html) ---
+        // This function will run after the DOM content is fully loaded.
+        window.onload = function() {
+            const canvas = document.getElementById('motion-background');
+            if (!canvas || !canvas.getContext) return;
+
+            const ctx = canvas.getContext('2d');
+            let particlesArray;
+            const heroSection = document.getElementById('project-hero');
+
+            // Set canvas size to match its parent container (the hero section)
+            function setCanvasSize() {
+                if (heroSection) {
+                    // Match the canvas size to the hero section's bounding box
+                    canvas.width = heroSection.offsetWidth;
+                    canvas.height = heroSection.offsetHeight;
+                    
+                    // Re-position the canvas exactly over the hero section
+                    const rect = heroSection.getBoundingClientRect();
+                    canvas.style.top = rect.top + window.scrollY + 'px';
+                    canvas.style.left = rect.left + window.scrollX + 'px';
+
+                } else {
+                    // Fallback to full window size if hero section ID is missed
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+            }
+            // Set initial size
+            setCanvasSize();
+
+            // Particle class
+            class Particle {
+                constructor(x, y, directionX, directionY, size, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.directionX = directionX;
+                    this.directionY = directionY;
+                    this.size = size;
+                    this.color = color;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+                update() {
+                    // Boundary check relative to the canvas dimensions
+                    if (this.x > canvas.width || this.x < 0) {
+                        this.directionX = -this.directionX;
+                    }
+                    if (this.y > canvas.height || this.y < 0) {
+                        this.directionY = -this.directionY;
+                    }
+                    this.x += this.directionX;
+                    this.y += this.directionY;
+                    this.draw();
+                }
+            }
+
+            // Create particle array
+            function init() {
+                particlesArray = [];
+                let numberOfParticles = Math.min(Math.floor((canvas.height * canvas.width) / 9000), 150); 
+                for (let i = 0; i < numberOfParticles; i++) {
+                    let size = (Math.random() * 2) + 1;
+                    let x = (Math.random() * (canvas.width - size * 4)) + size * 2; // Adjusted boundaries
+                    let y = (Math.random() * (canvas.height - size * 4)) + size * 2; // Adjusted boundaries
+                    let directionX = (Math.random() * .4) - .2;
+                    let directionY = (Math.random() * .4) - .2;
+                    let color = accentColor;
+                    particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, canvas.width, canvas.height); 
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                }
+                connect();
+            }
+
+            // Draw lines between particles
+            function connect() {
+                let opacityValue = 1;
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
+                                             ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                        if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                            opacityValue = 1 - (distance / 20000);
+                            ctx.strokeStyle = `rgba(34, 197, 94, ${opacityValue})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            // Re-initialize on resize
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                init();
+            });
+            
+            // Since the canvas is inside a scrollable section, we need to recalculate size on scroll
+            window.addEventListener('scroll', setCanvasSize); 
+            
+            init();
+            animate();
+        };
     </script>
 
 </body>
