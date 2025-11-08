@@ -722,8 +722,14 @@
                     </div>
                 </div>
 
-                <!-- Founder's Video Section - REMOVED Lightbox Wrapper / Used native <video> -->
+                <!-- Founder's Video Section - (Videos will be shown directly - NO Lightbox) -->
                 <div class="premium-card p-8 rounded-2xl scroll-reveal">
+                    <div class="flex flex-col md:flex-row items-center justify-around space-y-8 md:space-y-0 md:space-x-12">
+                        <!-- REMOVED: cursor-pointer and onclick for lightbox -->
+                        <div class="w-full max-w-sm md:max-w-xs mx-auto">
+                            <div class="vertical-media-wrapper rounded-xl shadow-2xl border-4 border-green-500/50 overflow-hidden">
+                                <!-- Kept video autoplay/loop/muted and added controls for interaction -->
+                                <video controls autoplay loop muted class="w-full h-full">
                     <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> About Founder & CMD </h3>
                     <!-- Replaced lightbox wrapper (iframe) with native <video> element with controls, as requested -->
                     <video controls class="w-full aspect-[16/9] rounded-xl shadow-2xl" 
@@ -1344,3 +1350,4 @@
 
 </body>
 </html>
+
