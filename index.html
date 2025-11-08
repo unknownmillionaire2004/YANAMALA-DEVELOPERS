@@ -142,53 +142,6 @@
             padding: 1.5rem;
         }
 
-        /* NEW: Style for the Contact Form */
-        .contact-form-bg {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(12, 10, 9, 1) 40%);
-        }
-        .form-input {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: var(--text-color);
-            transition: border-color 0.3s, background-color 0.3s;
-        }
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            background-color: rgba(34, 197, 94, 0.1);
-        }
-        
-        /* --- TABBED INTERFACE STYLING --- */
-        .tab-button {
-            padding: 1rem 1.5rem;
-            font-weight: 600;
-            color: #9ca3af; /* gray-400 */
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .tab-button:hover {
-            color: var(--accent-color);
-        }
-        .tab-button.active {
-            color: var(--accent-color);
-            border-bottom-color: var(--accent-color);
-        }
-        .tab-content {
-            animation: fadeIn 0.6s ease-out;
-        }
-        .tab-content.hidden {
-            display: none;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         /* Vertical Aspect Ratio Wrapper (9:16) for Video/Images */
         .vertical-media-wrapper {
             position: relative;
@@ -274,7 +227,7 @@
                 <a href="#about" class="hover:text-green-500 transition">Founder & Vision</a>
                 <a href="#projects" class="hover:text-green-500 transition">Our Projects</a>
                 <a href="#happy-customers" class="hover:text-green-500 transition">Happy Customers</a>
-                <a href="#contact-form" class="hover:text-green-500 transition">Inquiry</a>
+                <!-- REMOVED: Inquiry Link -->
                 <a href="#footer-contact" class="hover:text-green-500 transition">Contact</a>
             </div>
             <a href="tel:+919000100280" class="hidden md:block px-4 py-2 text-sm rounded-full glow-btn">
@@ -293,7 +246,7 @@
                 <a href="#about" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Founder & Vision</a>
                 <a href="#projects" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Our Projects</a>
                 <a href="#happy-customers" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Happy Customers</a>
-                <a href="#contact-form" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Inquiry</a>
+                <!-- REMOVED: Inquiry Link -->
                 <a href="#footer-contact" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Contact</a>
                 <a href="tel:+919000100280" class="px-4 py-2 text-center rounded-full glow-btn mt-4 text-sm" onclick="closeMobileMenu()">
                     Call Now <i class="fas fa-phone-alt ml-1"></i>
@@ -722,11 +675,11 @@
                     </div>
                 </div>
 
-                <!-- Founder's Video Section - REMOVED Lightbox Wrapper / Used native <video> -->
+                <!-- Founder's Video Section - ADDED AUTOPLAY and MUTED -->
                 <div class="premium-card p-8 rounded-2xl scroll-reveal">
                     <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> About Founder & CMD </h3>
-                    <!-- Replaced lightbox wrapper (iframe) with native <video> element with controls, as requested -->
-                    <video controls class="w-full aspect-[16/9] rounded-xl shadow-2xl" 
+                    <!-- *** MODIFIED: Added autoplay and muted attributes *** -->
+                    <video controls autoplay muted class="w-full aspect-[16/9] rounded-xl shadow-2xl" 
                            src="assets/CMD Sir AV (1).mp4" 
                            title="Founder's Message" 
                            poster="https://placehold.co/800x450/0c0a09/22c55e?text=Click+to+Play+CMD+Video"
@@ -789,8 +742,8 @@
                             <li><i class="fas fa-map-marker-alt text-green-500 mr-2"></i> 30 Mins to Airport</li>
                         </ul>
                     </div>
-                    <!-- UPDATED: Link is now #contact-form to capture leads -->
-                    <a href="#contact-form" class="glow-btn px-6 py-3 rounded-full inline-block mt-4">
+                    <!-- UPDATED: Link now targets the contact section in the footer -->
+                    <a href="#footer-contact" class="glow-btn px-6 py-3 rounded-full inline-block mt-4">
                         View Investment Options <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -835,8 +788,7 @@
                     <img src="assets/IMG-20251030-WA0028.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4 group-hover:opacity-80 transition"
                          onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Plot+Handover+4'">
-                    <p class="text-lg font-bold text-white">Plot Handover Moment (4)</p>
-                    <p class="text-sm text-gray-400">Transparency is our promise.</p>
+                    <p class="text-lg font-bold text-white">Transparency is our promise.</p>
                 </div>
 
                 <div class="premium-card p-4 rounded-2xl scroll-reveal group cursor-pointer" style="transition-delay: 0.8s;" onclick="openLightbox('assets/IMG-20251030-WA0033.jpg', 'image')">
@@ -884,24 +836,7 @@
         </div>
     </section>
 
-    <!-- 8. CONVERSION POINT (CONTACT FORM - MOVED DOWN) -->
-    <section id="contact-form" class="py-24 contact-form-bg">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-
-            <!-- Information Panel -->
-            <div class="space-y-6 lg:col-span-1 scroll-reveal">
-                <h2 class="text-5xl font-extrabold text-white">
-                    <span class="text-green-500">మీ కలలను సాకారం చేయండి!</span>
-                </h2>
-                <p class="text-xl text-gray-300">
-                    Get in touch with our Resale & Investment experts. We guarantee clear titles and the best price challenge.
-                </p>
-                <div class="space-y-3 text-gray-400">
-                    <p class="flex items-center text-lg"><i class="fas fa-phone-alt text-green-500 mr-3"></i> Call: +91 90001 00280</p>
-                    <p class="flex items-center text-lg"><i class="fas fa-envelope text-green-500 mr-3"></i> Email: info@yanamaladevelopers.com</p>
-                    <p class="flex items-center text-lg"><i class="fas fa-map-marker-alt text-green-500 mr-3"></i> Attapur, Hyderabad - 500 048</p>
-                </div>
-            </div>
+    <!-- REMOVED SECTION 8: CONTACT FORM -->
 
     <!-- 9. NURTURING (KNOWLEDGE HUB - MOVED DOWN) -->
     <section id="knowledge" class="py-24 bg-gray-900">
@@ -936,13 +871,21 @@
         </div>
     </section>
 
-    <!-- 10. FOOTER -->
-    <footer id="footer-contact" class="py-16 md:py-20 bg-black border-t border-green-600/30">
+    <!-- 10. FOOTER - NOW CONTAINS CONTACT INFO -->
+    <footer id="footer-contact" class="py-16 md:py-20 bg-black/60 border-t border-green-600/30">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Make the <span class="text-green-500">Right Investment</span>, Right Now.</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                <span class="text-green-500">మీ కలలను సాకారం చేయండి!</span>
+            </h2>
             <p class="text-xl text-gray-400 mb-8">
-                The right place and the right time for investment is now. Contact us today.
+                Get in touch with our Resale & Investment experts. We guarantee clear titles and the best price challenge.
             </p>
+
+            <!-- Prominent Contact Details Block (Replaces form information) -->
+            <div class="inline-flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 mb-12 border-y border-green-500/30 py-6 px-4">
+                <p class="flex items-center justify-center text-xl font-bold text-white"><i class="fas fa-phone-alt text-green-500 mr-3"></i> Call: +91 90001 00280</p>
+                <p class="flex items-center justify-center text-xl font-bold text-white"><i class="fas fa-envelope text-green-500 mr-3"></i> Email: info@yanamaladevelopers.com</p>
+            </div>
             
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="tel:+919000100280" class="glow-btn text-lg px-8 py-4 rounded-full shadow-2xl">
@@ -988,7 +931,6 @@
                     this.src = 'https://placehold.co/800x600/0c0a09/22c55e?text=Image+Not+Found';
                     this.alt = 'Image Not Found';
                 };
-            // Note: The 'video' case has been removed from the Lightbox handler to prevent videos from using it.
             } else {
                 return; // Do nothing if type is unknown or video
             }
@@ -1244,65 +1186,7 @@
             countObserver.observe(element);
         });
         
-        // --- FORM SUBMISSION LOGIC (Client-side simulation) ---
-        document.getElementById('lead-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const name = form.name.value;
-            const phone = form.phone.value;
-            const interest = form.interest.options[form.interest.selectedIndex].text;
-            const messageEl = document.getElementById('form-message');
-
-            // Simple validation
-            if (!name || !phone || form.interest.value === "") {
-                messageEl.classList.remove('hidden', 'bg-green-700/20', 'text-green-300');
-                messageEl.classList.add('bg-red-700/20', 'text-red-300');
-                messageEl.textContent = 'Please fill out your Name and Phone Number.';
-                return;
-            }
-
-            // Simulate sending data (in a real app, this would be an API call)
-            console.log(`Lead Captured - Name: ${name}, Phone: ${phone}, Interest: ${interest}`);
-
-            // Display success message
-            messageEl.classList.remove('hidden', 'bg-red-700/20', 'text-red-300');
-            messageEl.classList.add('bg-green-700/20', 'text-green-300');
-            messageEl.innerHTML = `<i class="fas fa-check-circle mr-2"></i> Thank you, <strong>${name}</strong>! Your inquiry about ${interest} has been successfully submitted. Our team will call you back on ${phone} shortly to share exclusive details.`;
-
-            // Clear the form
-            form.reset();
-
-            // Hide message after a few seconds
-            setTimeout(() => {
-                messageEl.classList.add('hidden');
-            }, 6000);
-        });
-        // --- END FORM SUBMISSION LOGIC ---
-
-        // --- NEW FEATURE: STICKY CTA LOGIC ---
-        const heroSection = document.getElementById('hero-section');
-        const stickyCta = document.getElementById('sticky-cta-widget');
-        
-        const ctaObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // If the hero section is NOT intersecting (i.e., we have scrolled past it)
-                if (!entry.isIntersecting) {
-                    stickyCta.classList.add('visible');
-                } else {
-                    stickyCta.classList.remove('visible');
-                }
-            });
-        }, { threshold: 0 }); // Trigger immediately when 0% of hero is visible
-
-        if (heroSection && stickyCta) {
-            ctaObserver.observe(heroSection);
-        }
-        // --- END STICKY CTA LOGIC ---
-
     </script>
 
 </body>
 </html>
-
-
