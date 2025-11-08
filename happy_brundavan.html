@@ -38,13 +38,24 @@
         /* COPIED from index.html: Subtle Floating Animation for the logo/icon */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); } 
+            50% { transform: translateY(-12px); } /* Increased float distance for larger logo */
             100% { transform: translateY(0px); }
         }
         .floating-element {
             animation: float 5s ease-in-out infinite;
         }
         
+        /* COPIED from index.html: Scroll Animation States */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .glow-btn {
             background-color: var(--accent-color);
             color: var(--primary-color);
@@ -63,14 +74,10 @@
             transition: all 0.5s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .scroll-reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+        .premium-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4); /* Enhanced hover glow */
         }
         
         /* Custom size for the highlighted logo */
@@ -123,6 +130,7 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- Company Name / Project Name (Simplified in sticky nav) -->
             <div class="flex items-center space-x-3">
+                <!-- LINK BACK TO MAIN PAGE -->
                 <a href="index.html" class="flex items-center space-x-3">
                     <img src="assets/logo.png" alt="Yanamala Developers Logo" class="h-10 w-auto floating-element border border-green-600/50 rounded-lg" onerror="this.src='https://placehold.co/40x40/0c0a09/22c55e?text=YI'">
                     <div>
@@ -140,8 +148,8 @@
 
     <!-- Main Content -->
     <main>
-        <!-- 1. Logo Masthead & Project Hero (Applied background animation/canvas) -->
-        <section id="project-hero" class="relative min-h-[50vh] flex flex-col items-center justify-center text-center p-8 overflow-hidden bg-gray-900/50">
+        <!-- 1. Logo Masthead & Project Hero (UPDATED to min-h-screen) -->
+        <section id="project-hero" class="relative min-h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden bg-gray-900/50">
             <!-- CANVAS BACKGROUND (Copied from index.html) -->
             <canvas id="motion-background" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
             <div class="absolute inset-0 bg-black/70 z-10"></div>
@@ -169,6 +177,7 @@
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-extrabold text-center mb-12 text-white scroll-reveal">Venture Video Overview</h2>
                 <div class="max-w-3xl mx-auto">
+                    <!-- Added scroll-reveal -->
                     <div class="premium-card p-4 rounded-xl shadow-2xl scroll-reveal">
                          <div class="video-container">
                             <!-- NOTE: Replace YOUR_VIDEO_ID_1 with actual YouTube embed ID -->
@@ -183,6 +192,7 @@
         <!-- 3. Investment Quote Section (Psychology: Financial Motivation) -->
         <section class="py-16">
             <div class="max-w-7xl mx-auto px-6 text-center">
+                <!-- Added scroll-reveal -->
                 <div class="scroll-reveal">
                     <h2 class="text-4xl md:text-5xl font-extrabold text-green-500 mb-4" style="line-height: 1.4;">"పెట్టుబడికి ఇదే... సరైన సమయం ప్రదేశం"</h2>
                     <p class="text-3xl md:text-4xl font-bold text-white mb-8">"Right Place & Right Time for INVESTMENT"</p>
@@ -196,6 +206,7 @@
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-extrabold text-center mb-16 text-white scroll-reveal">Unbeatable Location & Connectivity</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Added scroll-reveal to the list container -->
                     <div class="scroll-reveal">
                         <ul class="space-y-4 text-lg">
                             <li class="flex items-center"><i class="fas fa-map-marker-alt text-green-500 mr-4"></i>Proximate to Shadnagar Railway Station & Bus Stand</li>
@@ -338,7 +349,7 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Payment Options -->
-                    <div class="premium-card p-6 rounded-2xl scroll-reveal">
+                    <div class="premium-card p-6 rounded-2xl scroll-reveal" style="transition-delay: 0.2s;">
                         <h3 class="text-2xl font-bold text-white mb-4">Flexible Payment Options</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full pricing-table rounded-lg overflow-hidden">
@@ -373,7 +384,7 @@
 
                     <!-- Facing Charges & Gifts -->
                     <div class="space-y-8">
-                        <div class="premium-card p-6 rounded-2xl scroll-reveal">
+                        <div class="premium-card p-6 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
                             <h3 class="text-2xl font-bold text-white mb-4">Extra Facing Charges (Excl.)</h3>
                             <ul class="space-y-2 text-gray-300">
                                 <li>East Facing Extra Charges: <span class="font-bold text-white">₹ 99/-</span> Per Sq.Yd.</li>
@@ -381,7 +392,7 @@
                                 <li>North East Facing Extra Charges: <span class="font-bold text-white">₹ 299/-</span> Per Sq.Yd.</li>
                             </ul>
                         </div>
-                        <div class="premium-card p-6 rounded-2xl scroll-reveal">
+                        <div class="premium-card p-6 rounded-2xl scroll-reveal" style="transition-delay: 0.6s;">
                             <h3 class="text-2xl font-bold text-white mb-4">Assured Gifts & Benefits</h3>
                             <ul class="space-y-2 text-gray-300">
                                 <li><i class="fas fa-gift text-green-500 mr-2"></i> Happy Sweet Box <span class="text-gray-400">(Only for C-Option Payment)</span></li>
@@ -397,7 +408,7 @@
 
     <!-- Footer & Contact CTA -->
     <footer id="contact" class="py-16 md:py-20 bg-black border-t border-green-600/30">
-        <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="max-w-7xl mx-auto px-6 text-center scroll-reveal">
             <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Ready to Invest? Book Your Site Visit!</h2>
             <p class="text-xl text-gray-400 mb-8">
                 Contact us today for a private site tour and to lock in the exclusive relaunch pricing.
@@ -429,6 +440,7 @@
         const primaryColor = rootStyles.getPropertyValue('--primary-color').trim();
         
         // --- SCROLL ANIMATION LOGIC (For .scroll-reveal) ---
+        // This observer is responsible for the fade-in-up animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -437,41 +449,35 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
 
         // Observe all elements marked for scroll-reveal
         document.querySelectorAll('.scroll-reveal').forEach(element => {
             observer.observe(element);
         });
 
-        // --- CANVAS MOTION BACKGROUND LOGIC (COPIED from index.html) ---
+
+        // --- PARTICLE BACKGROUND SCRIPT (RUNS ON LOAD) ---
         // This function will run after the DOM content is fully loaded.
         window.onload = function() {
             const canvas = document.getElementById('motion-background');
-            if (!canvas || !canvas.getContext) return;
+            const heroSection = document.getElementById('project-hero'); // Target the hero section
+            
+            if (!canvas || !canvas.getContext || !heroSection) {
+                console.error("Canvas or Hero Section not found. Particle animation disabled.");
+                return;
+            }
 
             const ctx = canvas.getContext('2d');
             let particlesArray;
-            const heroSection = document.getElementById('project-hero');
 
             // Set canvas size to match its parent container (the hero section)
             function setCanvasSize() {
-                if (heroSection) {
-                    // Match the canvas size to the hero section's bounding box
-                    canvas.width = heroSection.offsetWidth;
-                    canvas.height = heroSection.offsetHeight;
-                    
-                    // Re-position the canvas exactly over the hero section
-                    const rect = heroSection.getBoundingClientRect();
-                    canvas.style.top = rect.top + window.scrollY + 'px';
-                    canvas.style.left = rect.left + window.scrollX + 'px';
-
-                } else {
-                    // Fallback to full window size if hero section ID is missed
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                }
+                // Match the canvas size to the hero section's rendered dimensions
+                canvas.width = heroSection.offsetWidth;
+                canvas.height = heroSection.offsetHeight;
             }
+            
             // Set initial size
             setCanvasSize();
 
@@ -508,6 +514,7 @@
             // Create particle array
             function init() {
                 particlesArray = [];
+                // Calculate particles based on canvas area, with a max limit
                 let numberOfParticles = Math.min(Math.floor((canvas.height * canvas.width) / 9000), 150); 
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 2) + 1;
@@ -537,8 +544,10 @@
                     for (let b = a; b < particlesArray.length; b++) {
                         let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
                                              ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                        if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                            opacityValue = 1 - (distance / 20000);
+                        // Connection distance scaled relative to screen size
+                        let connectDistance = (canvas.width / 7) * (canvas.height / 7);
+                        if (distance < connectDistance) {
+                            opacityValue = 1 - (distance / 20000); // Keep opacity logic simple
                             ctx.strokeStyle = `rgba(34, 197, 94, ${opacityValue})`;
                             ctx.lineWidth = 1;
                             ctx.beginPath();
@@ -551,13 +560,15 @@
             }
             
             // Re-initialize on resize
+            // Use a debounce function to limit how often resize logic fires
+            let resizeTimer;
             window.addEventListener('resize', () => {
-                setCanvasSize();
-                init();
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    setCanvasSize();
+                    init();
+                }, 250); // Wait 250ms after resize stops
             });
-            
-            // Since the canvas is inside a scrollable section, we need to recalculate size on scroll
-            window.addEventListener('scroll', setCanvasSize); 
             
             init();
             animate();
