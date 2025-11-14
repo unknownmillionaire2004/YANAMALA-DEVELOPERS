@@ -6,8 +6,11 @@
     <meta name="description" content="Invest in premium plots in Hyderabad's Golden Corridor with Yanamala Developers. We offer unbeatable prices, guaranteed resale expertise, and are your true friend for financial growth.">
     
     <title>Yanamala Developers | మీ ఆర్థికాభివృద్ధికి నిజమైన నేస్తం</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -21,7 +24,7 @@
             background-color: var(--primary-color);
             color: var(--text-color);
             overflow-x: hidden;
-            /* Motion Background Implementation - now uses green glow */
+            /* Motion Background Glow Effect */
             background-image: radial-gradient(circle at 15% 50%, rgba(34, 197, 94, 0.05) 0%, transparent 40%),
                               radial-gradient(circle at 85% 50%, rgba(34, 197, 94, 0.05) 0%, transparent 40%);
             background-size: 200% 200%;
@@ -54,27 +57,27 @@
             transform: translateY(0);
         }
 
-        /* Premium Glow Button - Now Green */
+        /* Premium Glow Button - Green Accent */
         .glow-btn {
             background-color: var(--accent-color);
             color: var(--primary-color);
             transition: all 0.4s ease;
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5); /* Stronger initial glow */
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5); 
             font-weight: 700;
         }
         .glow-btn:hover {
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 0 25px rgba(34, 197, 94, 0.9), 0 0 50px rgba(34, 197, 94, 0.5); /* Brighter hover glow */
-            background-color: #4ade80; /* A brighter green */
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.9), 0 0 50px rgba(34, 197, 94, 0.5); 
+            background-color: #4ade80; 
         }
-        /* Style for the Whatsapp button in the hero section */
+        /* Style for the WhatsApp button in the hero section */
         .whatsapp-btn {
-            background-color: #10b981 !important; /* Tailwind emerald-500 equivalent */
+            background-color: #10b981 !important; 
             box-shadow: 0 0 10px rgba(16, 185, 129, 0.7) !important;
             color: white !important;
         }
         .whatsapp-btn:hover {
-            background-color: #059669 !important; /* Tailwind emerald-600 equivalent */
+            background-color: #059669 !important; 
             box-shadow: 0 0 25px rgba(16, 185, 129, 0.9), 0 0 50px rgba(16, 185, 129, 0.5) !important;
         }
 
@@ -89,34 +92,32 @@
         .premium-card:hover {
             border-color: var(--accent-color);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4); /* Enhanced hover glow */
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4); 
         }
         
         /* Specific styling for the Founder's Card to highlight it - Now Green Accent */
         .founder-card {
             border-color: var(--accent-color);
-            background: rgba(34, 197, 94, 0.08); /* Slight accent background */
-            padding: 3rem; /* Increased padding for more space */
-            /* Added subtle, permanent pulse effect to highlight this card */
+            background: rgba(34, 197, 94, 0.08); 
+            padding: 3rem; 
             box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
         }
 
-        /* UPDATED: Changed to a HORIZONTAL Separator Animation */
+        /* HORIZONTAL Separator Animation */
         .separator-line {
-            /* Width and height are controlled by Tailwind (e.g., w-16 h-1) */
-            background-color: var(--accent-color); /* Solid color for the line */
+            background-color: var(--accent-color); 
             opacity: 0;
-            transform: scaleX(0); /* Animate horizontally */
-            transform-origin: left; /* Start animation from the left */
+            transform: scaleX(0); 
+            transform-origin: left; 
             transition: transform 1.2s ease, opacity 1.2s ease;
         }
         .separator-line.is-visible {
             opacity: 1;
-            transform: scaleX(1); /* Animate to full width */
+            transform: scaleX(1); 
         }
         /* Style for counter numbers - Now Green */
         .counter-number {
-            font-size: 3.5rem; /* Large text */
+            font-size: 3.5rem; 
             font-weight: 900;
             line-height: 1;
             color: var(--accent-color);
@@ -131,10 +132,10 @@
             background-color: var(--primary-color);
         }
         .mobile-menu.active {
-            max-height: 500px; /* Large enough value to show all content */
+            max-height: 500px; 
         }
 
-        /* NEW: Style for the Founder's Quote box in the Hero section */
+        /* Style for the Founder's Quote box in the Hero section */
         .founder-quote-box {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(5px);
@@ -158,7 +159,7 @@
             object-fit: cover;
         }
 
-        /* NEW FEATURE: STICKY QUICK CONTACT WIDGET */
+        /* STICKY QUICK CONTACT WIDGET */
         .sticky-cta {
             position: fixed;
             bottom: 0;
@@ -168,7 +169,7 @@
             background-color: var(--primary-color);
             border-top: 1px solid rgba(34, 197, 94, 0.3);
             transition: transform 0.3s ease-out;
-            transform: translateY(100%); /* Start hidden */
+            transform: translateY(100%); 
             padding: 0.75rem 0;
         }
         .sticky-cta.visible {
@@ -191,34 +192,34 @@
             color: var(--primary-color);
         }
 
-        /* --- TABBED INTERFACE STYLING (UPDATED) --- */
+        /* --- TABBED INTERFACE STYLING --- */
         .tab-button {
-            padding: 0.75rem 1rem; /* pill-like padding */
+            padding: 0.75rem 1rem; 
             font-weight: 600;
-            color: var(--text-color); /* Default text color */
-            border: 1px solid rgba(34, 197, 94, 0.3); /* Subtle accent border */
-            border-radius: 9999px; /* Rounded pill shape */
-            background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+            color: var(--text-color); 
+            border: 1px solid rgba(34, 197, 94, 0.3); 
+            border-radius: 9999px; 
+            background-color: rgba(255, 255, 255, 0.05); 
             transition: all 0.3s ease;
             cursor: pointer;
-            margin-bottom: 0.5rem; 
+            margin-bottom: 0.5rem;  
         }
         .tab-button:hover {
-            color: var(--primary-color); /* Text turns dark on hover */
-            background-color: var(--accent-color); /* Highlight background */
+            color: var(--primary-color); 
+            background-color: var(--accent-color); 
             border-color: var(--accent-color);
         }
         .tab-button.active {
-            color: var(--primary-color); /* Highlight active text to dark color */
-            background-color: var(--accent-color); /* Solid accent color when active */
+            color: var(--primary-color); 
+            background-color: var(--accent-color); 
             border-color: var(--accent-color);
         }
-
+        
     </style>
 </head>
 <body>
 
-    <!-- NEW FEATURE: Reusable Lightbox Modal -->
+    <!-- Lightbox Modal -->
     <div id="lightbox-modal" class="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-lg hidden justify-center items-center p-4 transition-opacity duration-300" onclick="closeLightbox()">
         <div class="relative max-w-full max-h-full" onclick="event.stopPropagation()">
             <!-- Content will be injected here (img or video) -->
@@ -245,12 +246,10 @@
             </div>
 
             <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <!-- UPDATED NAVIGATION ORDER -->
                 <a href="#recognition" class="hover:text-green-500 transition">Awards</a>
                 <a href="#about" class="hover:text-green-500 transition">Founder & Vision</a>
                 <a href="#projects" class="hover:text-green-500 transition">Our Projects</a>
                 <a href="#happy-customers" class="hover:text-green-500 transition">Happy Customers</a>
-                <!-- REMOVED: Inquiry Link -->
                 <a href="#footer-contact" class="hover:text-green-500 transition">Contact</a>
             </div>
             <a href="tel:+919000100280" class="hidden md:block px-4 py-2 text-sm rounded-full glow-btn">
@@ -264,12 +263,10 @@
 
         <div id="mobile-menu" class="mobile-menu md:hidden">
             <div class="flex flex-col space-y-3 p-4">
-                <!-- UPDATED NAVIGATION ORDER -->
                 <a href="#recognition" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Awards</a>
                 <a href="#about" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Founder & Vision</a>
                 <a href="#projects" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Our Projects</a>
                 <a href="#happy-customers" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Happy Customers</a>
-                <!-- REMOVED: Inquiry Link -->
                 <a href="#footer-contact" class="hover:text-green-500 transition p-2 border-b border-gray-800" onclick="closeMobileMenu()">Contact</a>
                 <a href="tel:+919000100280" class="px-4 py-2 text-center rounded-full glow-btn mt-4 text-sm" onclick="closeMobileMenu()">
                     Call Now <i class="fas fa-phone-alt ml-1"></i>
@@ -280,6 +277,7 @@
 
     <!-- 1. HERO SECTION -->
     <section id="hero-section" class="relative min-h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden">
+        <!-- Canvas for the animated particle background -->
         <canvas id="motion-background" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
         
         <div class="absolute inset-0 bg-black/70"></div>
@@ -317,7 +315,7 @@
         </div>
     </section>
 
-    <!-- NEW FEATURE: STICKY QUICK CONTACT WIDGET (Mobile Only) -->
+    <!-- STICKY QUICK CONTACT WIDGET (Mobile Only) -->
     <div id="sticky-cta-widget" class="sticky-cta md:hidden">
         <div class="max-w-md mx-auto px-4 flex space-x-4">
             <a href="tel:+919000100280" class="contact-btn call-fixed">
@@ -328,7 +326,7 @@
             </a>
         </div>
     </div>
-    <!-- END NEW FEATURE -->
+    <!-- END STICKY QUICK CONTACT WIDGET -->
 
     <!-- 2. VALUE PROPOSITION -->
     <section id="value" class="py-24 max-w-7xl mx-auto px-6">
@@ -360,7 +358,7 @@
         </div>
     </section>
     
-    <!-- 3. TRUST BY NUMBERS (METRICS - Moved up) -->
+    <!-- 3. TRUST BY NUMBERS (METRICS) -->
     <section id="metrics" class="py-16 bg-black/60">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 text-white scroll-reveal">Backed by Trust and Transparency (విశ్వాసం, పారదర్శకత)</h2>
@@ -400,29 +398,28 @@
             </p>
 
             <div class="premium-card p-6 md:p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
-                <!-- Tab Buttons (UPDATED STYLING AND CONTAINER CLASSES) -->
+                <!-- Tab Buttons -->
                 <div class="flex flex-wrap justify-center gap-4 mb-8">
                     <button data-tab="awards" class="tab-button active" onclick="switchRecognitionTab('awards')">
                         <i class="fas fa-trophy mr-2"></i> Main Awards
                     </button>
-                    <!-- RENAMED: Media & Celebrity Mentions -->
                     <button data-tab="media" class="tab-button" onclick="switchRecognitionTab('media')">
                         <i class="fas fa-camera-retro mr-2"></i> Celebrity Photo Gallery
                     </button>
-                    <!-- RENAMED: Award Video to Media Coverage Proof. ID changed to 'news' -->
                     <button data-tab="news" class="tab-button" onclick="switchRecognitionTab('news')">
                         <i class="fas fa-tv mr-2"></i> Media Coverage Proof
                     </button>
                 </div>
 
-                <!-- Tab Content 1: Main Awards (Videos will be shown directly - NO Lightbox) -->
+                <!-- Tab Content 1: Main Awards -->
                 <div id="tab-awards" class="tab-content">
                     <div class="flex flex-col md:flex-row items-center justify-around space-y-8 md:space-y-0 md:space-x-12">
                         <!-- Video for Main Awards -->
                         <div class="w-full max-w-sm md:max-w-xs mx-auto">
-                            <div class="vertical-media-wrapper rounded-xl shadow-2xl border-4 border-green-500/50 overflow-hidden">
-                                <!-- Kept video controls for user interaction. Autoplay/Muted/Volume logic is handled by JS -->
-                                <video controls muted id="main-awards-video" class="w-full h-full">
+                            <!-- Removed overlay, now video attempts direct play with sound -->
+                            <div class="vertical-media-wrapper rounded-xl shadow-2xl border-4 border-green-500/50 overflow-hidden relative">
+                                <video controls id="main-awards-video" class="w-full h-full">
+                                    <!-- FIX: Removed redundant src attribute from <video> tag -->
                                     <source src="assets/Biz Networks Real Estate Syndicate Award.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -440,13 +437,12 @@
                     </div>
                 </div>
 
-                <!-- Tab Content 2: Celebrity Photo Gallery (Lightbox enabled for all images) -->
+                <!-- Tab Content 2: Celebrity Photo Gallery -->
                 <div id="tab-media" class="tab-content hidden">
                     <h3 class="text-3xl font-bold text-white mb-8">Photos with Prominent Personalities </h3>
-                    <!-- Grid columns: 2 on mobile, 3 on tablets/medium screens, 4 on large screens -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                         
-                        <!-- Images retain lightbox functionality -->
+                        <!-- Image Gallery Item 1 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03] cursor-pointer" onclick="openLightbox('assets/celeb_1.jpg', 'image')">
                             <img src="assets/celeb_1.jpg" alt="CMD with Celebrity 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+1'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -495,7 +491,6 @@
                                 <span class="text-sm text-green-400 font-semibold">Inauguration 8</span>
                             </div>
                         </div>
-                        <!-- Next 8 images (9 through 16) -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03] cursor-pointer" onclick="openLightbox('assets/celeb_9.jpg', 'image')">
                             <img src="assets/celeb_9.jpg" alt="CMD with Celebrity 9" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+9'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -535,7 +530,7 @@
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03] cursor-pointer" onclick="openLightbox('assets/celeb_15.jpg', 'image')">
                             <img src="assets/celeb_15.jpg" alt="CMD with Celebrity 15" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x400/0c0a09/22c55e?text=CELEB+15'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                                <span class="text-sm text-green-400 font-semibold">Special Guest 15</span>
+                                <span class="text-sm text-green-400 font-semibold">Industry Report 15</span>
                             </div>
                         </div>
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03] cursor-pointer" onclick="openLightbox('assets/celeb_16.jpg', 'image')">
@@ -547,13 +542,12 @@
                     </div>
                 </div>
 
-                <!-- Tab Content 3: Media Coverage Proof (Lightbox enabled for all images) -->
+                <!-- Tab Content 3: Media Coverage Proof -->
                 <div id="tab-news" class="tab-content hidden">
                     <h3 class="text-3xl font-bold text-white mb-8">Print & News Channel Mentions </h3>
-                    <!-- Grid columns: 2 on mobile, 3 on larger screens -->
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                         
-                        <!-- Images retain lightbox functionality -->
+                        <!-- Media Gallery Item 1 -->
                         <div class="relative group overflow-hidden rounded-xl border border-white/10 hover:border-green-500/50 transition duration-300 transform hover:scale-[1.03] cursor-pointer" onclick="openLightbox('assets/media_1.jpg', 'image')">
                             <img src="assets/media_1.jpg" alt="Newspaper Clipping 1" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/300x200/0c0a09/22c55e?text=NEWS+1'">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -656,9 +650,9 @@
             </div>
         </div>
     </section>
-    <!-- END REVAMPED SECTION -->
+    <!-- END RECOGNITION SECTION -->
 
-    <!-- 5. DEEP DIVE (ABOUT FOUNDER/VISION - MOVED HERE) -->
+    <!-- 5. DEEP DIVE (ABOUT FOUNDER/VISION) -->
     <section id="about" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
@@ -684,9 +678,8 @@
                     </ul>
                 </div>
 
-                <!-- This is the founder card (moved up) -->
+                <!-- Founder Card -->
                 <div class="premium-card founder-card rounded-2xl flex flex-col items-center text-center p-12 scroll-reveal">
-                    <!-- Path corrected to founder_raju.jpg (matching uploaded asset) -->
                     <img src="assets/founder_raju.jpg" alt="Yanamala Raju - Founder & CMD" class="rounded-full shadow-2xl w-48 h-48 object-cover mb-6 border-4 border-green-600" onerror="this.src='https://placehold.co/192x192/22c55e/0c0a09?text=Raju+CMD'">
                     <div>
                         <p class="text-2xl font-bold text-green-500 mb-2">The Award-Winning Founder & CMD</p>
@@ -700,26 +693,28 @@
                 <!-- Founder's Video Section - Scroll-controlled autoplay -->
                 <div class="premium-card p-8 rounded-2xl scroll-reveal">
                     <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> About Founder & CMD </h3>
-                    <video controls muted id="founder-video" class="w-full aspect-[16/9] rounded-xl shadow-2xl" 
-                           src="assets/CMD Sir AV (1).mp4" 
-                           title="Founder's Message" 
-                           poster="https://placehold.co/800x450/0c0a09/22c55e?text=Click+to+Play+CMD+Video"
-                           onerror="this.poster='https://placehold.co/800x450/0c0a09/22c55e?text=Video+Load+Error'">
-                        <source src="assets/CMD Sir AV (1).mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <div class="w-full aspect-[16/9] rounded-xl shadow-2xl relative overflow-hidden">
+                        <!-- Removed overlay, now video attempts direct play with sound -->
+                        <video controls id="founder-video" class="w-full h-full" 
+                                title="Founder's Message" 
+                                poster="https://placehold.co/800x450/0c0a09/22c55e?text=Click+to+Play+CMD+Video"
+                                onerror="this.poster='https://placehold.co/800x450/0c0a09/22c55e?text=Video+Load+Error'">
+                            <!-- FIX: Removed redundant src attribute from <video> tag -->
+                            <source src="assets/CMD Sir AV (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
-                <!-- END Founder's Video Section -->
             </div>
         </div>
     </section>
 
-    <!-- 6. PRODUCT SHOWCASE (MOVED DOWN) -->
+    <!-- 6. PRODUCT SHOWCASE -->
     <section id="projects" class="py-24 max-w-7xl mx-auto px-6">
         <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white scroll-reveal">Our <span class="text-green-500">Premium Projects</span></h2>
 
         <div class="space-y-16">
-            <!-- UPDATED: Link now redirects to the dedicated project page -->
+            <!-- Project 1: Happy Brundavan -->
             <a href="happy_brundavan.html" class="block">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center premium-card p-8 rounded-2xl scroll-reveal hover:shadow-2xl hover:shadow-green-500/50 transition duration-300">
                     <div class="order-2 lg:order-1 space-y-6">
@@ -738,14 +733,14 @@
                         </span>
                     </div>
                     <div class="order-1 lg:order-2">
-                        <img src="assets/BROUCHER_page-0001.jpg" alt="Happy Brundavan" class="rounded-xl shadow-2xl w-full transition duration-500 hover:scale-[1.01] hover:shadow-green-500/30" onerror="this.src='https://placehold.co/600x400/3f3f46/22c55e?text=Happy+Brundavan+Layout'">
+                        <img src="assets/BROUCHER_page-0001.jpg" alt="Happy Brundavan Layout" class="rounded-xl shadow-2xl w-full transition duration-500 hover:scale-[1.01] hover:shadow-green-500/30" onerror="this.src='https://placehold.co/600x400/3f3f46/22c55e?text=Happy+Brundavan+Layout'">
                     </div>
                 </div>
             </a>
 
+            <!-- Project 2: Shadnagar Open Plots -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center premium-card p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.4s;">
                 <div>
-                    <!-- Path corrected to clean image name (user must rename file) -->
                     <img src="assets/shadnagar_plots.jpg" alt="Shadnagar Plots" class="rounded-xl shadow-2xl w-full transition duration-500 hover:scale-[1.01] hover:shadow-green-500/30" onerror="this.src='https://placehold.co/600x400/3f3f46/22c55e?text=Shadnagar+Plots+Aerial'">
                 </div>
                 <div class="space-y-6">
@@ -763,7 +758,6 @@
                             <li><i class="fas fa-map-marker-alt text-green-500 mr-2"></i> 30 Mins to Airport</li>
                         </ul>
                     </div>
-                    <!-- UPDATED: Link now targets the contact section in the footer -->
                     <a href="#footer-contact" class="glow-btn px-6 py-3 rounded-full inline-block mt-4">
                         View Investment Options <i class="fas fa-arrow-right ml-2"></i>
                     </a>
@@ -772,7 +766,7 @@
         </div>
     </section>
 
-    <!-- 7. SOCIAL PROOF / HAPPY CUSTOMERS (Lightbox enabled for all images) -->
+    <!-- 7. SOCIAL PROOF / HAPPY CUSTOMERS -->
     <section id="happy-customers" class="py-24 bg-black/60">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white scroll-reveal">Our <span class="text-green-500">Happy Customer</span> Family</h2>
@@ -780,7 +774,7 @@
             <!-- Grid for Videos and Photos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- All images retain lightbox functionality as requested -->
+                <!-- Customer Image Gallery -->
                 <div class="premium-card p-4 rounded-2xl scroll-reveal group cursor-pointer" style="transition-delay: 0.4s;" onclick="openLightbox('assets/IMG-20251030-WA0030.jpg', 'image')">
                     <img src="assets/IMG-20251030-WA0030.jpg" alt="Customer Handover Photo" 
                          class="w-full h-48 object-cover rounded-xl mb-4 group-hover:opacity-80 transition"
@@ -857,7 +851,7 @@
         </div>
     </section>
 
-    <!-- 9. NURTURING (KNOWLEDGE HUB - MOVED DOWN) -->
+    <!-- 8. NURTURING (KNOWLEDGE HUB) -->
     <section id="knowledge" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white scroll-reveal">Real Estate <span class="text-green-500">Knowledge Hub</span></h2>
@@ -884,13 +878,13 @@
                         <a href="https://www.facebook.com/share/v/17KwB11oX4/" target="_blank" class="text-3xl text-blue-600 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/yanamalarajuofficial/" target="_blank" class="text-3xl text-pink-600 hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/919000100280?text=Hello%20Yanamala%20Developers,%20I%20am%20interested%20in%20your%20projects%20and%20would%20like%20to%20know%20more%20about%20investment%20opportunities." target="_blank" class="text-3xl text-green-500 hover:text-green-400 transition"><i class="fab fa-whatsapp"></i></a>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 10. FOOTER - NOW CONTAINS CONTACT INFO -->
+    <!-- 9. FOOTER - CONTACT INFO -->
     <footer id="footer-contact" class="py-16 md:py-20 bg-black/60 border-t border-green-600/30">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
@@ -900,7 +894,7 @@
                 Get in touch with our Resale & Investment experts. We guarantee clear titles and the best price challenge.
             </p>
 
-            <!-- Prominent Contact Details Block (Replaces form information) -->
+            <!-- Prominent Contact Details Block -->
             <div class="inline-flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 mb-12 border-y border-green-500/30 py-6 px-4">
                 <p class="flex items-center justify-center text-xl font-bold text-white"><i class="fas fa-phone-alt text-green-500 mr-3"></i> Call: <a href="tel:+919000100280" class="hover:text-green-400 transition">+91 90001 00280</a></p>
                 <p class="flex items-center justify-center text-xl font-bold text-white"><i class="fas fa-envelope text-green-500 mr-3"></i> Email: info@yanamaladevelopers.com</p>
@@ -918,8 +912,7 @@
             <div class="mt-10 text-gray-600 text-sm space-y-2">
                 <p>Head Office: 1st Floor, Aab Building, Pillar No. 171, Near By Pista House, Attapur, Hyderabad - 500 048.</p>
                 <p class="text-xs">© 2025 Yanamala Developers Pvt Ltd. All Rights Reserved.</p>
-                <!-- FIXED: Updated the acknowledgement text for a more professional tone -->
-                <p class="text-xs mt-2"> Crafted by Unknown Millionaire Team.</p>
+                <p class="text-xs mt-2">Crafted by Unknown Millionaire Team.</p>
             </div>
         </div>
     </footer>
@@ -930,7 +923,7 @@
         const accentColor = rootStyles.getPropertyValue('--accent-color').trim();
         const primaryColor = rootStyles.getPropertyValue('--primary-color').trim();
         
-        // --- NEW FEATURE: LIGHTBOX LOGIC ---
+        // --- LIGHTBOX LOGIC ---
         function openLightbox(source, type) {
             const modal = document.getElementById('lightbox-modal');
             const contentContainer = document.getElementById('lightbox-content-container');
@@ -942,22 +935,21 @@
                 mediaElement = document.createElement('img');
                 mediaElement.src = source;
                 mediaElement.alt = 'Full View';
-                // Styles to ensure it fits the screen while maintaining aspect ratio
                 mediaElement.className = 'rounded-xl shadow-2xl object-contain max-w-[95vw] max-h-[95vh] cursor-zoom-out';
-                mediaElement.style.margin = 'auto'; // Center image
-                // Add onerror fallback just in case
+                mediaElement.style.margin = 'auto'; 
+                
                 mediaElement.onerror = function() {
                     this.src = 'https://placehold.co/800x600/0c0a09/22c55e?text=Image+Not+Found';
                     this.alt = 'Image Not Found';
                 };
             } else {
-                return; // Do nothing if type is unknown or video
+                // Return if type is unknown or video (video handling removed from lightbox for simplicity)
+                return; 
             }
 
             contentContainer.appendChild(mediaElement);
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            // Pause body scrolling
             document.body.style.overflow = 'hidden';
         }
 
@@ -974,20 +966,40 @@
             
             modal.classList.remove('flex');
             modal.classList.add('hidden');
-            // Restore body scrolling
             document.body.style.overflow = '';
         }
-        // --- END NEW FEATURE: LIGHTBOX LOGIC ---
+        // --- END LIGHTBOX LOGIC ---
 
 
         // --- MOBILE MENU TOGGLE LOGIC ---
-        function closeMobileMenu() {
-            document.getElementById('mobile-menu').classList.remove('active');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const buttonIcon = mobileMenuButton ? mobileMenuButton.querySelector('i') : null;
+
+        function updateMenuIcon(isOpen) {
+            if (buttonIcon) {
+                if (isOpen) {
+                    buttonIcon.classList.remove('fa-bars');
+                    buttonIcon.classList.add('fa-times');
+                } else {
+                    buttonIcon.classList.remove('fa-times');
+                    buttonIcon.classList.add('fa-bars');
+                }
+            }
         }
 
-        document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('active');
-        });
+        function closeMobileMenu() {
+            if (mobileMenu) mobileMenu.classList.remove('active');
+            updateMenuIcon(false);
+        }
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('active');
+                mobileMenu.classList.toggle('active');
+                updateMenuIcon(isOpen);
+            });
+        }
         // --- END MOBILE MENU TOGGLE LOGIC ---
 
         // --- TAB SWITCHING LOGIC for #recognition ---
@@ -999,78 +1011,89 @@
                 content.classList.add('hidden');
             });
 
-            // Note: Updated the third tab to look for the 'news' ID
-            document.querySelector(`.tab-button[data-tab="${tabName}"]`).classList.add('active');
-            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+            const selectedButton = document.querySelector(`.tab-button[data-tab="${tabName}"]`);
+            const selectedContent = document.getElementById(`tab-${tabName}`);
+
+            if (selectedButton) selectedButton.classList.add('active');
+            if (selectedContent) selectedContent.classList.remove('hidden');
         }
         
-        // --- SCROLL-BASED VIDEO PLAYBACK LOGIC ---
-        // Array to hold all videos we want to observe
+        // --- SCROLL-BASED VIDEO PLAYBACK LOGIC (FIXED: Added debouncing to prevent play/pause race condition) ---
         const scrollVideos = [];
-
-        // Add the video elements to the array and set up the observer
         const founderVideo = document.getElementById('founder-video');
         const awardsVideo = document.getElementById('main-awards-video');
         
         if (founderVideo) scrollVideos.push(founderVideo);
         if (awardsVideo) scrollVideos.push(awardsVideo);
 
+        // Map to store timeout IDs for debouncing
+        const videoTimeouts = new Map();
+
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const video = entry.target;
+                const videoId = video.id;
+
+                // Clear any pending timeout for this video immediately
+                if (videoTimeouts.has(videoId)) {
+                    clearTimeout(videoTimeouts.get(videoId));
+                    videoTimeouts.delete(videoId);
+                }
 
                 if (entry.isIntersecting) {
-                    // Video is in the viewport (at least 50% visible)
-                    // Start playing and un-mute (as requested)
+                    // Action: PLAY (Immediate)
                     if (video.paused) {
-                        video.muted = false;
+                        video.muted = false; // Attempt to unmute
                         video.play().catch(error => {
-                            // If autoplay fails (common on mobile), it will remain paused/muted, 
-                            // but the user can press play manually.
-                            console.log('Autoplay with volume blocked by browser:', error);
-                            video.muted = true; // Keep muted if unmuting failed
+                            // If auto-play with sound is blocked, fall back to muted, ensuring playback continues.
+                            // Removed the specific console error that triggered the "interrupted" message
+                            console.warn(`Attempted auto-play with sound failed for ${video.id}. Falling back to muted playback.`, error);
+                            video.muted = true;
+                            video.play().catch(e => console.error(`Muted playback failed for ${video.id}:`, e));
                         });
                     }
                 } else {
-                    // Video is scrolled out of view
-                    if (!video.paused) {
-                        video.pause();
-                        video.muted = true; // Mute when pausing
-                    }
+                    // Action: PAUSE (Debounced)
+                    // Set a short delay before pausing to avoid race conditions when scrolling rapidly
+                    const timeoutId = setTimeout(() => {
+                        if (!video.paused) {
+                            video.pause();
+                            video.muted = true; 
+                        }
+                        videoTimeouts.delete(videoId);
+                    }, 150); // 150ms delay should stabilize the scroll
+                    
+                    videoTimeouts.set(videoId, timeoutId);
                 }
             });
         }, { threshold: 0.5 }); // Trigger when 50% of the video is visible
 
-        // Observe all videos
         scrollVideos.forEach(video => {
             videoObserver.observe(video);
         });
         // --- END SCROLL-BASED VIDEO PLAYBACK LOGIC ---
 
 
-        // Initialize the first tab as visible on load
+        // Initialize all features on window load
         window.onload = () => {
-             // Delay to ensure all elements are ready
+             // Set default tab visibility
             setTimeout(() => {
                 switchRecognitionTab('awards');
             }, 50);
 
             // --- CANVAS MOTION BACKGROUND LOGIC ---
             const canvas = document.getElementById('motion-background');
-            // Check if canvas is supported and present
             if (!canvas || !canvas.getContext) return;
 
             const ctx = canvas.getContext('2d');
             let particlesArray;
 
-            // Set canvas to full screen
             function setCanvasSize() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             }
             setCanvasSize();
 
-            // Particle class
             class Particle {
                 constructor(x, y, directionX, directionY, size, color) {
                     this.x = x;
@@ -1099,14 +1122,12 @@
                 }
             }
 
-            // Create particle array
             function init() {
                 particlesArray = [];
-                // Limit particles to ensure smooth performance
+                // Optimized particle count based on screen size
                 let numberOfParticles = Math.min(Math.floor((canvas.height * canvas.width) / 9000), 150); 
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 2) + 1;
-                    // FIXED: Used canvas.width/height instead of innerWidth/innerHeight for consistency
                     let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
                     let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
                     let directionX = (Math.random() * .4) - .2;
@@ -1116,10 +1137,8 @@
                 }
             }
 
-            // Animation loop
             function animate() {
                 requestAnimationFrame(animate);
-                // FIXED: Used canvas.width/height instead of innerWidth/innerHeight for consistency
                 ctx.clearRect(0, 0, canvas.width, canvas.height); 
                 for (let i = 0; i < particlesArray.length; i++) {
                     particlesArray[i].update();
@@ -1127,17 +1146,17 @@
                 connect();
             }
 
-            // Draw lines between particles
             function connect() {
                 let opacityValue = 1;
                 for (let a = 0; a < particlesArray.length; a++) {
                     for (let b = a; b < particlesArray.length; b++) {
                         let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                                             ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                        // Connection distance scaled relative to screen size for consistency
+                                       ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                        
+                        // Dynamic connection distance
                         if (distance < (canvas.width / 7) * (canvas.height / 7)) {
                             opacityValue = 1 - (distance / 20000);
-                            ctx.strokeStyle = `rgba(34, 197, 94, ${opacityValue})`; // Using green accent color with opacity
+                            ctx.strokeStyle = `rgba(34, 197, 94, ${opacityValue})`; 
                             ctx.lineWidth = 1;
                             ctx.beginPath();
                             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -1148,7 +1167,7 @@
                 }
             }
             
-            // Resize event
+            // Resize event listener for canvas and particle reset
             window.addEventListener('resize', () => {
                 setCanvasSize();
                 init();
@@ -1158,7 +1177,6 @@
             animate();
             // --- END CANVAS LOGIC ---
         };
-        // --- END TAB SWITCHING LOGIC ---
 
 
         // --- SCROLL ANIMATION LOGIC (For .scroll-reveal and .separator-line) ---
@@ -1170,7 +1188,7 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 }); // Trigger when 15% of element is visible
+        }, { threshold: 0.15 }); 
 
         document.querySelectorAll('.scroll-reveal, .separator-line').forEach(element => {
             observer.observe(element);
@@ -1178,28 +1196,22 @@
 
         // --- COUNTING ANIMATION LOGIC (For .counter-number) ---
         const formatNumber = (num, target) => {
-            // Special formatting for numbers under 100 (like '8+')
+            // Handle small numbers with explicit '+' suffix (e.g., 8+)
             if (target < 100) {
-                // Ensure the '+' suffix is only added when the count is complete
                 return Math.floor(num) + (num >= target ? '+' : '');
             }
 
-            // Format large numbers (Indian numbering system is implicit with 'en-IN')
+            // Handle large numbers with Indian number grouping format (toLocaleString 'en-IN')
             const formatted = Math.floor(num).toLocaleString('en-IN');
             
-            // Add K suffix only for the final large count display (5000+ -> 5K+)
-            if (target >= 5000 && num >= target) {
-                // Only show K for the final result
-                if (num === target) {
-                    return (target / 1000).toFixed(0) + 'K+';
-                }
-                return formatted;
+            // Add 'K+' for final results of 5000+ to keep it concise
+            if (target >= 5000 && num === target) {
+                return (target / 1000).toFixed(0) + 'K+';
             }
             return formatted;
         };
 
-        const animateCount = (element, target, duration, suffix) => {
-            // Use a unique attribute to prevent re-animation
+        const animateCount = (element, target, duration) => {
             if (element.getAttribute('data-animated') === 'true') return;
             element.setAttribute('data-animated', 'true');
 
@@ -1212,36 +1224,31 @@
                 step++;
                 start = Math.min(target, step * increment);
                 
-                // Update display 
                 element.textContent = formatNumber(start, target);
 
                 if (step >= steps) {
-                    // Final display
                     element.textContent = formatNumber(target, target);
                     clearInterval(timer);
                 }
                 
-            }, duration / steps);  
+            }, duration / steps); 
         };
 
         const metricElements = document.querySelectorAll('.metric-box');
         let metricsAnimated = false;
 
-        // Use IntersectionObserver specifically for the count animation trigger
         const countObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !metricsAnimated) {
-                    // Start animation for all metrics when the section enters view
                     metricElements.forEach(el => {
                         const countEl = el.querySelector('.counter-number');
                         const t = parseInt(el.getAttribute('data-target'));
-                        const s = el.getAttribute('data-suffix');
                         if (countEl && t) {
-                            animateCount(countEl, t, 1500, s);
+                            animateCount(countEl, t, 1500); // 1.5 seconds duration
                         }
                     });
                     metricsAnimated = true;
-                    observer.disconnect(); // Stop observing after animation starts
+                    observer.disconnect(); 
                 }
             });
         }, { threshold: 0.2 }); 
