@@ -695,10 +695,7 @@
                     <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> About Founder & CMD </h3>
                     <div class="w-full aspect-[16/9] rounded-xl shadow-2xl relative overflow-hidden">
                         <!-- Removed overlay, now video attempts direct play with sound -->
-                        <video controls id="founder-video" class="w-full h-full" 
-                                title="Founder's Message" 
-                                poster="https://placehold.co/800x450/0c0a09/22c55e?text=Click+to+Play+CMD+Video"
-                                onerror="this.poster='https://placehold.co/800x450/0c0a09/22c55e?text=Video+Load+Error'">
+                        <video controls id="founder-video" class="w-full h-full">
                             <!-- FIX: Removed redundant src attribute from <video> tag -->
                             <source src="assets/CMD Sir AV (1).mp4" type="video/mp4">
                             Your browser does not support the video tag.
@@ -1018,7 +1015,7 @@
             if (selectedContent) selectedContent.classList.remove('hidden');
         }
         
-        // --- SCROLL-BASED VIDEO PLAYBACK LOGIC (FIXED: Added debouncing to prevent play/pause race condition) ---
+        // --- SCROLL-BASED VIDEO PLAYBACK LOGIC (FIXED: Added robust debouncing and corrected error handling) ---
         const scrollVideos = [];
         const founderVideo = document.getElementById('founder-video');
         const awardsVideo = document.getElementById('main-awards-video');
@@ -1034,34 +1031,33 @@
                 const video = entry.target;
                 const videoId = video.id;
 
-                // Clear any pending timeout for this video immediately
+                // 1. Clear any pending PAUSE timeout immediately if the state changes
                 if (videoTimeouts.has(videoId)) {
                     clearTimeout(videoTimeouts.get(videoId));
                     videoTimeouts.delete(videoId);
                 }
 
                 if (entry.isIntersecting) {
-                    // Action: PLAY (Immediate)
+                    // 2. Action: PLAY (Immediate)
                     if (video.paused) {
-                        video.muted = false; // Attempt to unmute
+                        video.muted = false; // Attempt unmuted play as requested
                         video.play().catch(error => {
-                            // If auto-play with sound is blocked, fall back to muted, ensuring playback continues.
-                            // Removed the specific console error that triggered the "interrupted" message
-                            console.warn(`Attempted auto-play with sound failed for ${video.id}. Falling back to muted playback.`, error);
+                            // Fallback to muted play if browser blocks unmuted auto-play
+                            console.warn(`[Video Playback] Unmuted play blocked by browser. Falling back to muted for ${videoId}.`, error);
                             video.muted = true;
-                            video.play().catch(e => console.error(`Muted playback failed for ${video.id}:`, e));
+                            video.play().catch(e => console.error(`Muted playback failed for ${videoId}:`, e));
                         });
                     }
                 } else {
-                    // Action: PAUSE (Debounced)
-                    // Set a short delay before pausing to avoid race conditions when scrolling rapidly
+                    // 3. Action: PAUSE (Debounced)
+                    // Set a longer delay before pausing (200ms) to ensure the play promise is resolved first.
                     const timeoutId = setTimeout(() => {
                         if (!video.paused) {
                             video.pause();
-                            video.muted = true; 
+                            video.muted = true; // Always mute when pausing
                         }
                         videoTimeouts.delete(videoId);
-                    }, 150); // 150ms delay should stabilize the scroll
+                    }, 200); // Increased delay to 200ms for stability
                     
                     videoTimeouts.set(videoId, timeoutId);
                 }
