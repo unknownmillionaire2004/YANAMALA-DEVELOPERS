@@ -416,10 +416,9 @@
                     <div class="flex flex-col md:flex-row items-center justify-around space-y-8 md:space-y-0 md:space-x-12">
                         <!-- Video for Main Awards -->
                         <div class="w-full max-w-sm md:max-w-xs mx-auto">
-                            <!-- Removed overlay, now video attempts direct play with sound -->
+                            <!-- ADDED playsinline to prevent fullscreen on mobile autoplay -->
                             <div class="vertical-media-wrapper rounded-xl shadow-2xl border-4 border-green-500/50 overflow-hidden relative">
-                                <video controls id="main-awards-video" class="w-full h-full">
-                                    <!-- FIX: Removed redundant src attribute from <video> tag -->
+                                <video controls id="main-awards-video" class="w-full h-full" playsinline>
                                     <source src="assets/Biz Networks Real Estate Syndicate Award.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -694,9 +693,7 @@
                 <div class="premium-card p-8 rounded-2xl scroll-reveal">
                     <h3 class="text-3xl font-bold text-white mb-4"><i class="fas fa-video text-green-500 mr-2"></i> About Founder & CMD </h3>
                     <div class="w-full aspect-[16/9] rounded-xl shadow-2xl relative overflow-hidden">
-                        <!-- Removed overlay, now video attempts direct play with sound -->
-                        <video controls id="founder-video" class="w-full h-full">
-                            <!-- FIX: Removed redundant src attribute from <video> tag -->
+                        <video controls id="founder-video" class="w-full h-full" playsinline>
                             <source src="assets/CMD Sir AV (1).mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -1041,6 +1038,7 @@
                     // 2. Action: PLAY (Immediate)
                     if (video.paused) {
                         video.muted = false; // Attempt unmuted play as requested
+                        video.currentTime = 0; // Always start from the beginning
                         video.play().catch(error => {
                             // Fallback to muted play if browser blocks unmuted auto-play
                             console.warn(`[Video Playback] Unmuted play blocked by browser. Falling back to muted for ${videoId}.`, error);
@@ -1050,11 +1048,12 @@
                     }
                 } else {
                     // 3. Action: PAUSE (Debounced)
-                    // Set a longer delay before pausing (200ms) to ensure the play promise is resolved first.
+                    // Set a delay before pausing (200ms) to ensure the play promise is resolved first.
                     const timeoutId = setTimeout(() => {
                         if (!video.paused) {
                             video.pause();
                             video.muted = true; // Always mute when pausing
+                            video.currentTime = 0; // Reset video to start
                         }
                         videoTimeouts.delete(videoId);
                     }, 200); // Increased delay to 200ms for stability
